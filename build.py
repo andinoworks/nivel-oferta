@@ -38,7 +38,7 @@ def items(lst, grupo=None):
         used.add(s)
         pa = round(p["precio"] * 100 / (100 - p["off"]), -2) if p.get("off") else 0
         out.append(dict(s=s, t=p["titulo"], g=grupo or p["grupo"], p=p["precio"], pa=pa, off=p.get("off", 0),
-                        v=int(p.get("vendidos") or 0), r=p.get("rating"), img=p["foto"], u=directo(p["url"]),
+                        v=int(p.get("vendidos") or 0), r=p.get("rating"), img=p["foto"], u=p.get("link") or directo(p["url"]),
                         c=p.get("codigo", ""), mv=bool(p.get("mas_vendido")), fin=p.get("fin", "")))
     return out
 

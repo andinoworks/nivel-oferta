@@ -79,6 +79,7 @@ with sync_playwright() as p:
 for i, x in enumerate(sel):
     u = m.get(x["url"])
     x["codigo"] = u["regex"] if u else ""
+    x["link"] = u["short_url"] if u else ""
     fn = f"img/r{i:02d}.webp"
     for uu in (x["img"].replace("-E.webp", "-O.webp"), x["img"]):
         try:

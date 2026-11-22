@@ -9,6 +9,7 @@
   "off": 60,
   "fin": "2026-11-23T00:00:07",
   "codigo": "DHM70J-YT36",
+  "link": "https://meli.la/1r4hqgk",
   "foto": "img/r00.webp"
  },
  {
@@ -19,8 +20,9 @@
   "rating": 4.6,
   "precio": 45119,
   "off": 68,
-  "fin": "2026-11-23T00:00:13",
+  "fin": "2026-11-23T00:00:20",
   "codigo": "DHM70J-Q27A",
+  "link": "https://meli.la/1mAuohV",
   "foto": "img/r01.webp"
  },
  {
@@ -33,6 +35,7 @@
   "off": 60,
   "fin": "2026-11-23T00:00:21",
   "codigo": "DHM70J-6L1S",
+  "link": "https://meli.la/2BJv7Hp",
   "foto": "img/r02.webp"
  },
  {
@@ -45,6 +48,7 @@
   "off": 60,
   "fin": "2026-11-23T00:00:21",
   "codigo": "DHM70J-ZM63",
+  "link": "https://meli.la/2CJAzeq",
   "foto": "img/r03.webp"
  },
  {
@@ -57,6 +61,7 @@
   "off": 58,
   "fin": "2026-11-23T00:00:13",
   "codigo": "DHM70J-FHRW",
+  "link": "https://meli.la/2SPDVTR",
   "foto": "img/r04.webp"
  },
  {
@@ -69,6 +74,7 @@
   "off": 57,
   "fin": "2026-11-23T00:00:21",
   "codigo": "DHM70J-2D18",
+  "link": "https://meli.la/2b94PCY",
   "foto": "img/r05.webp"
  },
  {
@@ -79,8 +85,9 @@
   "rating": 4.8,
   "precio": 84843,
   "off": 57,
-  "fin": "2026-11-23T00:00:13",
+  "fin": "2026-11-23T00:00:20",
   "codigo": "DHM70J-CK9S",
+  "link": "https://meli.la/1Hd4Rzg",
   "foto": "img/r06.webp"
  },
  {
@@ -93,6 +100,7 @@
   "off": 45,
   "fin": "2026-11-23T00:00:28",
   "codigo": "DHM70J-7702",
+  "link": "https://meli.la/1ENGpWN",
   "foto": "img/r07.webp"
  },
  {
@@ -105,6 +113,7 @@
   "off": 44,
   "fin": "2026-11-23T00:00:28",
   "codigo": "DHM70J-P8UE",
+  "link": "https://meli.la/1kQPaJ6",
   "foto": "img/r08.webp"
  },
  {
@@ -117,6 +126,7 @@
   "off": 54,
   "fin": "2026-11-23T00:00:28",
   "codigo": "DHM70J-A5JK",
+  "link": "https://meli.la/1ovRn98",
   "foto": "img/r09.webp"
  },
  {
@@ -129,7 +139,21 @@
   "off": 40,
   "fin": "2026-11-23T00:00:20",
   "codigo": "DHM70J-RG95",
+  "link": "https://meli.la/2dq3T2S",
   "foto": "img/r10.webp"
+ },
+ {
+  "titulo": "Guitarra Acústica AG002 Naranja Arce Brillante Con Accesorios Para Diestros",
+  "url": "https://www.mercadolibre.com.ar/guitarra-acustica-ag002-naranja-arce-brillante-con-accesorios-para-diestros/p/MLA29808846",
+  "img": "https://http2.mlstatic.com/D_Q_NP_2X_884279-MLA114183879508_082026-AB.webp",
+  "vendidos": 1000.0,
+  "rating": 4.7,
+  "precio": 97999,
+  "off": 51,
+  "fin": "2026-11-23T00:00:14",
+  "codigo": "DHM70J-XY3Q",
+  "link": "https://meli.la/1tnYuPv",
+  "foto": "img/r11.webp"
  },
  {
   "titulo": "Kit Entrenamiento Colcho Pesas Rueda Banda Soga Tobilleras Tobi2kg Rusa8kg Mancuernas3kg Colcho Soga Rueda Theramedia",
@@ -141,18 +165,7 @@
   "off": 51,
   "fin": "2026-11-23T00:00:14",
   "codigo": "DHM70J-58YX",
-  "foto": "img/r11.webp"
- },
- {
-  "titulo": "Guitarra Acústica AG002 Naranja Arce Brillante Con Accesorios Para Diestros",
-  "url": "https://www.mercadolibre.com.ar/guitarra-acustica-ag002-naranja-arce-brillante-con-accesorios-para-diestros/p/MLA29808846",
-  "img": "https://http2.mlstatic.com/D_Q_NP_2X_884279-MLA114183879508_082026-AB.webp",
-  "vendidos": 1000.0,
-  "rating": 4.7,
-  "precio": 97999,
-  "off": 51,
-  "fin": "2026-11-23T00:00:07",
-  "codigo": "DHM70J-XY3Q",
+  "link": "https://meli.la/2g6hZAS",
   "foto": "img/r12.webp"
  },
  {
@@ -165,6 +178,7 @@
   "off": 41,
   "fin": "2026-11-23T00:00:21",
   "codigo": "DHM70J-SR3C",
+  "link": "https://meli.la/26N5wam",
   "foto": "img/r13.webp"
  },
  {
@@ -177,18 +191,20 @@
   "off": 36,
   "fin": "2026-11-23T00:00:13",
   "codigo": "DHM70J-RLY1",
+  "link": "https://meli.la/1NbeUu9",
   "foto": "img/r14.webp"
  },
  {
-  "titulo": "Huawei Pura 80 Pro de 512 GB y 12 GB RAM, Negro",
-  "url": "https://www.mercadolibre.com.ar/huawei-pura-80-pro-de-512-gb-y-12-gb-ram-negro/p/MLA53469209",
-  "img": "https://http2.mlstatic.com/D_Q_NP_2X_860320-MLA100446056094_122025-AB.webp",
-  "vendidos": 500.0,
-  "rating": 4.8,
-  "precio": 1449999,
-  "off": 51,
-  "fin": "2026-11-22T23:59:28",
-  "codigo": "DHM70J-1517",
+  "titulo": "Hot Wheels Pack Por 5 Unidades",
+  "url": "https://articulo.mercadolibre.com.ar/MLA-1380850143-hot-wheels-pack-por-5-unidades-_JM",
+  "img": "https://http2.mlstatic.com/D_Q_NP_2X_803208-MLA104524821257_012026-AB.webp",
+  "vendidos": 10000.0,
+  "rating": 4.9,
+  "precio": 23990,
+  "off": 36,
+  "fin": "2026-11-23T00:00:07",
+  "codigo": "DHM70J-XS5U",
+  "link": "https://meli.la/1DAZJ7S",
   "foto": "img/r15.webp"
  }
 ]
