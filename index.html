@@ -4,575 +4,284 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nivel Oferta</title>
-<meta name="description" content="Los productos que aparecen en nuestros videos, con link directo y código para buscarlos en Mercado Libre.">
-<meta property="og:title" content="Nivel Oferta">
-<meta property="og:description" content="Lo que mostramos en los videos, con link directo.">
-<meta name="theme-color" content="#f5efe4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e0482a'/%3E%3Cpath d='M9 22V10l14 12V10' stroke='%23fff' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="description" content="Los productos de nuestros videos, con link directo a Mercado Libre, descuento y código para buscarlos.">
+<meta property="og:title" content="Nivel Oferta — lo que sale en los videos">
+<meta property="og:description" content="Hasta 70% OFF en productos que se venden de a miles. Link directo a Mercado Libre.">
+<meta property="og:image" content="img/p00.webp">
+<meta name="theme-color" content="#120f0c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4d2e'/%3E%3Cpath d='M9 22V10l14 12V10' stroke='%23fff' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5efe4;--surface:#fffdf8;--ink:#17140f;--muted:#6d655a;--line:#e3d9c8;--accent:#e0482a;--accent-ink:#fff;--soft:#fbe3d6;--ok:#1f7a55;
---r:14px;--ease:cubic-bezier(.23,1,.32,1);--gut:clamp(16px,4vw,48px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14120f;--surface:#1d1a16;--ink:#f3ede2;--muted:#a59c8e;--line:#2f2a23;--soft:#3a2219}}
-:root[data-theme="dark"]{--bg:#14120f;--surface:#1d1a16;--ink:#f3ede2;--muted:#a59c8e;--line:#2f2a23;--soft:#3a2219}
+:root{--bg:#f6f2ea;--surface:#fff;--ink:#16130f;--muted:#6b6358;--line:#e7dfd1;--accent:#ff4d2e;--accent2:#ff8a3d;--save:#00a650;--save-bg:#e3f7ec;
+--gold1:#ffe27a;--gold2:#f5b400;--gold3:#c98a00;--chip:#efe8dc;--r:18px;--ease:cubic-bezier(.23,1,.32,1);--spring:cubic-bezier(.34,1.56,.64,1);--gut:clamp(16px,4vw,48px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#100d0a;--surface:#1b1713;--ink:#f4eee4;--muted:#a69d90;--line:#2c261f;--chip:#231e18;--save-bg:#0f2c1d}}
+:root[data-theme="dark"]{--bg:#100d0a;--surface:#1b1713;--ink:#f4eee4;--muted:#a69d90;--line:#2c261f;--chip:#231e18;--save-bg:#0f2c1d}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.5 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}
-.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:9}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
-.mark{font:800 20px/1 "Bricolage Grotesque";letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+a{color:inherit}button{font:inherit;color:inherit}
+img{display:block}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:99}
+
+/* ---------- barra superior ---------- */
+.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.top.scrolled{border-color:var(--line);box-shadow:0 8px 30px -20px rgba(0,0,0,.4)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:68px}
+.mark{font:800 22px/1 "Bricolage Grotesque";letter-spacing:-.03em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.mark b{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:17px}
 .mark i{font-style:normal;color:var(--accent)}
-.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;mask-image:linear-gradient(90deg,#000 90%,transparent)}
-.chips a{flex:none;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--muted);transition:background .2s,color .2s,border-color .2s}
-.chips a:hover{color:var(--ink);border-color:var(--ink)}
-.hero{min-height:calc(100svh - 60px);display:grid;align-items:center;padding:48px 0}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
-.hero h1{font:800 clamp(40px,6.4vw,84px)/.98 "Bricolage Grotesque";letter-spacing:-.035em;text-wrap:balance}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lead{margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:34ch}
-.facts{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
-.facts b{display:block;font:800 30px/1 "Bricolage Grotesque";letter-spacing:-.02em}
-.facts span{font-size:14px;color:var(--muted)}
-.cta{display:inline-flex;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:11px 18px;border-radius:10px;border:0;cursor:pointer;transition:transform .16s var(--ease),filter .2s}
-.btn:hover{filter:brightness(1.07)} .btn:active{transform:scale(.97)}
-.collage{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.collage img{width:100%;aspect-ratio:1;object-fit:contain;background:#fff;border-radius:var(--r);padding:10%;border:1px solid var(--line)}
-.collage img:nth-child(2),.collage img:nth-child(5){transform:translateY(28px)}
-.grp{padding:clamp(64px,9vw,112px) 0;border-top:1px solid var(--line)}
-.gh{display:flex;gap:18px;align-items:baseline;margin-bottom:36px}
-.num{font:700 14px/1 "Bricolage Grotesque";color:var(--accent)}
-.gh h2{font:800 clamp(28px,3.6vw,46px)/1.05 "Bricolage Grotesque";letter-spacing:-.03em;text-wrap:balance}
-.gh h2 em{font-style:normal;font-weight:500;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
-@media (hover:hover){.card:hover{transform:translateY(-2px);box-shadow:0 14px 30px -18px rgba(40,25,10,.35)}.card:hover .ph img{transform:scale(1.03)}}
-.ph{display:block;background:#fff;aspect-ratio:1;overflow:hidden}
-.ph img{width:100%;height:100%;object-fit:contain;padding:9%;transition:transform .45s var(--ease)}
+.search{flex:1;max-width:560px;position:relative}
+.search input{width:100%;height:46px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);padding:0 44px 0 44px;font:500 15px "Instrument Sans";color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.search svg{position:absolute;left:14px;top:13px;width:20px;height:20px;color:var(--muted)}
+.search kbd{position:absolute;right:12px;top:12px;font:600 12px ui-monospace,monospace;border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--muted)}
+.trust{display:flex;align-items:center;gap:10px;margin-left:auto;font-size:13px;line-height:1.15;color:var(--muted);white-space:nowrap}
+.trust img{width:38px;height:38px}
+.trust b{display:block;color:var(--ink);font-size:14px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:#120f0c;color:#f7f1e6;isolation:isolate}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:-1;animation:float 14s ease-in-out infinite alternate}
+.b1{width:520px;height:520px;background:#ff4d2e;top:-180px;left:-120px}
+.b2{width:460px;height:460px;background:#f5b400;bottom:-220px;left:35%;animation-delay:-5s}
+.b3{width:380px;height:380px;background:#8f3bff;top:-120px;right:-100px;opacity:.35;animation-delay:-9s}
+@keyframes float{to{transform:translate(60px,40px) scale(1.12)}}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;min-height:min(780px,calc(100svh - 68px));padding-top:56px;padding-bottom:56px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 13px "Instrument Sans";letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 12px;border-radius:99px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#3dff8b;box-shadow:0 0 0 0 #3dff8b;animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(61,255,139,0)}100%{box-shadow:0 0 0 0 rgba(61,255,139,0)}}
+.hero h1{margin-top:22px;font:800 clamp(42px,6.6vw,92px)/.95 "Bricolage Grotesque";letter-spacing:-.04em;text-wrap:balance}
+.hero h1 .hl{background:linear-gradient(90deg,#ff4d2e,#ffb13d,#ff4d2e);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
+@keyframes sheen{to{background-position:-200% 0}}
+.hero .lead{margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:#cfc5b6;max-width:40ch}
+.stats{display:grid;grid-template-columns:repeat(3,auto);gap:30px;margin-top:34px;justify-content:start}
+.stats b{display:block;font:800 clamp(28px,3vw,40px)/1 "Bricolage Grotesque";letter-spacing:-.03em}
+.stats .g{color:#3dff8b}.stats .o{color:#ffb13d}
+.stats span{font-size:13px;color:#a89e8f}
+.hero .ctas{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 20px;border-radius:12px;border:0;cursor:pointer;transition:transform .18s var(--ease),box-shadow .25s var(--ease),filter .2s;box-shadow:0 10px 24px -12px var(--accent)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 16px 30px -12px var(--accent)}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:none;color:#f7f1e6}
+.marquee{min-width:0;overflow:visible;display:grid;gap:14px;transform:rotate(-6deg);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.row{display:flex;gap:14px;width:max-content;animation:scroll 40s linear infinite}
+.row.rev{animation-direction:reverse;animation-duration:46s}
+.marquee:hover .row{animation-play-state:paused}
+.row img{width:150px;height:150px;object-fit:contain;background:#fff;border-radius:20px;padding:14px;flex:none;box-shadow:0 18px 40px -24px rgba(0,0,0,.8)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.ticker{background:var(--accent);color:#fff;overflow:hidden;white-space:nowrap;font:700 15px "Bricolage Grotesque";letter-spacing:.01em}
+.ticker div{display:inline-flex;gap:40px;padding:11px 0;animation:scroll 50s linear infinite}
+.ticker span::before{content:"✦";margin-right:40px;opacity:.6}
+
+/* ---------- filtros ---------- */
+.filters{position:sticky;top:68px;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.filters .wrap{display:flex;gap:12px;align-items:center;padding-top:12px;padding-bottom:12px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;mask-image:linear-gradient(90deg,#000 92%,transparent);padding:2px}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--surface);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s,transform .15s var(--ease)}
+.chip:hover{border-color:var(--ink)}
+.chip:active{transform:scale(.95)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip small{opacity:.55;margin-left:4px;font-weight:500}
+.chip.gold[aria-pressed="false"]{background:linear-gradient(135deg,var(--gold1),var(--gold2));border-color:var(--gold2);color:#3b2600}
+.ctrl{display:flex;gap:8px;align-items:center}
+select,.tog{height:40px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 14px "Instrument Sans";padding:0 12px;cursor:pointer}
+.tog[aria-pressed="true"]{background:#ffe9ec;border-color:#ff5a76;color:#d11a3d}
+.count{font-size:14px;color:var(--muted);padding:22px 0 0}
+
+/* ---------- secciones y tarjetas ---------- */
+main{padding-bottom:60px}
+.sec{padding:44px 0 8px}
+.sec h2{font:800 clamp(28px,3.4vw,44px)/1.02 "Bricolage Grotesque";letter-spacing:-.035em;display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.sec h2 .em{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--chip);font-size:28px}
+.sec h2 small{font:500 15px "Instrument Sans";color:var(--muted);letter-spacing:0;margin-left:auto}
+.flash h2{color:var(--ink)}
+.flash .em{background:linear-gradient(135deg,var(--gold1),var(--gold2))!important}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:18px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s}
+.card.in{animation:rise .7s var(--ease) both;animation-delay:calc(var(--i,0)*55ms)}
+@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.98);filter:blur(6px)}}
+@media (hover:hover){.card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -28px rgba(40,20,0,.45);border-color:transparent}.card:hover .ph img{transform:scale(1.06) rotate(-1deg)}}
+.ph{position:relative;display:block;background:#fff;aspect-ratio:1;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:contain;padding:10%;transition:transform .6s var(--ease)}
+.off{position:absolute;left:12px;top:12px;background:var(--save);color:#fff;font:800 20px/1 "Bricolage Grotesque";letter-spacing:-.02em;padding:9px 11px 8px;border-radius:12px;box-shadow:0 8px 18px -8px rgba(0,120,60,.7);transform-origin:left top}
+.off.big{font-size:26px;background:linear-gradient(135deg,#ff2d55,#ff4d2e)}
+.card.in .off{animation:pop .6s var(--spring) both;animation-delay:calc(var(--i,0)*55ms + 250ms)}
+@keyframes pop{from{transform:scale(.3) rotate(-12deg);opacity:0}}
+.gold .off,.off.gold{background:linear-gradient(135deg,var(--gold1),var(--gold2) 55%,var(--gold3));color:#3b2600;box-shadow:0 8px 20px -8px rgba(201,138,0,.9);overflow:hidden}
+.off.gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.75) 50%,transparent 70%);transform:translateX(-100%);animation:shine 2.6s ease-in-out infinite}
+@keyframes shine{60%,100%{transform:translateX(100%)}}
+.tag{position:absolute;left:12px;bottom:12px;background:#ff7733;color:#fff;font:700 11px "Instrument Sans";letter-spacing:.05em;padding:5px 8px;border-radius:7px}
+.tag.fl{background:#16130f;color:var(--gold1)}
+.fav{position:absolute;right:10px;top:10px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px -6px rgba(0,0,0,.35);transition:transform .2s var(--spring)}
+.fav:active{transform:scale(.85)}
+.fav svg{width:20px;height:20px;fill:none;stroke:#16130f;stroke-width:2;transition:fill .2s,stroke .2s}
+.fav[aria-pressed="true"] svg{fill:#ff2d55;stroke:#ff2d55;animation:beat .45s var(--spring)}
+@keyframes beat{40%{transform:scale(1.35)}}
 .bd{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.meta{font-size:13px;color:var(--muted)}
-.card h3{font-size:15px;font-weight:500;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:2px}
-.pr strong{font:700 22px/1.1 "Bricolage Grotesque";letter-spacing:-.02em}
-.pr s{font-size:13px;color:var(--muted)}
-.off{font-size:12px;color:var(--ok);font-weight:600}
-.act{display:flex;gap:8px;margin-top:auto;padding-top:10px;flex-wrap:wrap}
-.act .btn{flex:1;font-size:14px;padding:10px 12px;white-space:nowrap}
-.code{font:600 12px/1.1 ui-monospace,monospace;background:var(--soft);color:var(--ink);border:0;border-radius:10px;padding:7px 10px;cursor:pointer;text-align:left;transition:transform .16s var(--ease)}
-.code span{display:block;font:500 10px/1.2 "Instrument Sans";color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.code:active{transform:scale(.96)}
-.how{padding:clamp(64px,9vw,112px) 0;border-top:1px solid var(--line)}
-.how h2{font:800 clamp(28px,3.6vw,46px)/1.05 "Bricolage Grotesque";letter-spacing:-.03em;max-width:18ch}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;counter-reset:s}
-.steps p{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;color:var(--muted)}
-.steps p::before{counter-increment:s;content:counter(s);display:block;font:800 34px/1 "Bricolage Grotesque";color:var(--accent);margin-bottom:12px}
-.steps b{color:var(--ink)}
-footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:14px;color:var(--muted)}
+.meta{font-size:13px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+.meta .st{color:#f5a300}
+.card h3{font-size:15px;font-weight:500;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:40px}
+.pr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:4px}
+.pr strong{font:800 25px/1 "Bricolage Grotesque";letter-spacing:-.03em}
+.pr s{font-size:14px;color:var(--muted)}
+.save{align-self:flex-start;background:var(--save-bg);color:var(--save);font:700 13px "Instrument Sans";padding:5px 9px;border-radius:8px}
+.gold .save{background:#fff3c4;color:#8a5a00}
+.act{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:auto;padding-top:12px}
+.act .btn{font-size:14px;padding:11px 12px;border-radius:11px;box-shadow:none}
+.act .btn img{width:20px;height:20px;background:#fff;border-radius:50%;padding:1px}
+.ib{width:42px;height:42px;border-radius:11px;border:1.5px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;transition:transform .15s var(--ease),border-color .2s}
+.ib:hover{border-color:var(--ink)}.ib:active{transform:scale(.92)}
+.ib svg{width:19px;height:19px}
+.code{grid-column:1/-1;font:600 12px ui-monospace,monospace;color:var(--muted);background:none;border:1px dashed var(--line);border-radius:9px;padding:6px 8px;cursor:pointer;text-align:center;transition:border-color .2s,color .2s}
+.code:hover{border-color:var(--accent);color:var(--ink)}
+.empty{text-align:center;padding:80px 0;color:var(--muted)}
+.empty b{display:block;font:800 30px "Bricolage Grotesque";color:var(--ink);margin-bottom:8px}
+
+/* ---------- cómo funciona / pie ---------- */
+.how{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 0}
+.how h2{font:800 clamp(30px,3.6vw,48px)/1.02 "Bricolage Grotesque";letter-spacing:-.035em;max-width:20ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.steps div{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--bg)}
+.steps i{font:800 40px/1 "Bricolage Grotesque";font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.steps b{display:block;margin:12px 0 6px;font-size:18px}
+.steps p{color:var(--muted)}
+.mlbox{display:flex;gap:18px;align-items:center;margin-top:34px;padding:20px;border-radius:var(--r);background:#fff159;color:#2d3277}
+.mlbox img{width:56px;height:56px;flex:none}
+.mlbox b{display:block;font-size:17px}
+footer{padding:36px 0 60px;font-size:14px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.toast{position:fixed;left:50%;bottom:24px;translate:-50% 0;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s var(--ease);pointer-events:none;z-index:9}
+.totop{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);cursor:pointer;display:grid;place-items:center;opacity:0;transform:translateY(16px) scale(.8);transition:opacity .3s,transform .4s var(--spring);z-index:50}
+.totop.on{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 0;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;opacity:0;transform:translateY(12px) scale(.96);transition:opacity .25s,transform .35s var(--spring);pointer-events:none;z-index:60;max-width:calc(100vw - 32px)}
 .toast.on{opacity:1;transform:none}
-[data-enter]>*{animation:up .7s var(--ease) both;animation-delay:calc(var(--d,0)*70ms)}
-.collage img{animation:pop .7s var(--ease) both;animation-delay:calc(200ms + var(--i)*60ms)}
-@keyframes up{from{opacity:0;transform:translateY(14px)}}
-@keyframes pop{from{opacity:0;scale:.94}}
-@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{min-height:auto}.collage{order:-1}.collage img:nth-child(n){transform:none}.steps{grid-template-columns:1fr}}
-@media (max-width:480px){.chips{display:none}.grid{grid-template-columns:1fr 1fr;gap:10px}.bd{padding:12px}.pr strong{font-size:18px}.act{flex-direction:column}.facts{gap:18px}}
+[data-enter]>*{animation:up .9s var(--ease) both;animation-delay:calc(var(--d,0)*90ms)}
+@keyframes up{from{opacity:0;transform:translateY(22px);filter:blur(8px)}}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (max-width:980px){.trust span{display:none}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr);min-height:auto;padding-top:40px}.marquee{transform:rotate(-4deg);margin:10px -20px 0}.row img{width:110px;height:110px}.steps{grid-template-columns:1fr}}
+@media (max-width:640px){.top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px}.search{order:3;flex-basis:100%;max-width:none}.search kbd{display:none}.filters{top:116px}html{scroll-padding-top:200px}
+.filters .wrap{flex-direction:column;align-items:stretch;gap:8px}.ctrl select{flex:1}
+.grid{grid-template-columns:1fr 1fr;gap:10px}.bd{padding:12px}.pr strong{font-size:20px}.off{font-size:16px;padding:7px 8px 6px;left:8px;top:8px}.off.big{font-size:19px}
+.act .ib.wa{display:none}.act{grid-template-columns:1fr}.sec h2{font-size:26px}.sec h2 small{display:none}.sec h2 .em{width:42px;height:42px;font-size:22px}.hero h1{font-size:44px}.fav{width:34px;height:34px;right:6px;top:6px}.stats{gap:18px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<nav><div class="wrap"><a class="mark" href="#top">nivel<i>:</i> oferta</a><div class="chips"><a href="#calor">Sobrevivir al calor</a><a href="#mosquitos">Guerra a los mosquitos</a><a href="#mate">Mate de competición</a><a href="#wifi">El WiFi no llega al baño</a><a href="#asado">Asado de domingo</a><a href="#gym">En forma sin gimnasio</a><a href="#cocina">Cocinar sin saber</a><a href="#vacaciones">Vacaciones con poca plata</a><a href="#cine">Cine en casa</a><a href="#vago">Ordenar sin moverse</a></div></div></nav>
-<main id="main">
-<section class="hero" id="top"><div class="wrap">
+<header class="top" id="top"><div class="wrap">
+  <a class="mark" href="#"><b>N</b><span>nivel<i>:</i> oferta</span></a>
+  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Buscar: ventilador, termo, freidora…" autocomplete="off" aria-label="Buscar productos"><kbd>/</kbd></label>
+  <div class="trust"><img src="img/ml.svg" alt="Mercado Libre"><span><b>Comprás en Mercado Libre</b>Compra Protegida y envío de ML</span></div>
+</div></header>
+
+<section class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="wrap">
   <div data-enter>
-    <h1 style="--d:0">Lo que sale en los videos, <em>con link directo.</em></h1>
-    <p class="lead" style="--d:1">Cada producto de nuestros memes, elegido entre los más vendidos de Mercado Libre. Tocá el botón o copiá el código y pegalo en el buscador.</p>
-    <div class="facts" style="--d:2"><div><b>37</b><span>productos</span></div><div><b>10</b><span>temas</span></div><div><b>+10 mil</b><span>ventas cada uno, casi todos</span></div></div>
-    <a class="btn cta" href="#calor" style="--d:3">Ver los productos</a>
+    <span class="eyebrow" style="--d:0"><span class="dot"></span>Precios revisados el 22/11/2026</span>
+    <h1 style="--d:1">Lo que sale en los videos, <span class="hl">con descuento de verdad.</span></h1>
+    <p class="lead" style="--d:2">Elegimos lo más vendido de Mercado Libre para cada meme. Tocás, vas directo al producto y pagás en Mercado Libre como siempre.</p>
+    <div class="stats" style="--d:3">
+      <div><b class="o" data-count="70" data-suf="%">0%</b><span>de descuento máximo</span></div>
+      <div><b class="g" data-count="1401009" data-pre="$ ">$ 0</b><span>de ahorro sumando todo</span></div>
+      <div><b data-count="39">0</b><span>productos elegidos</span></div>
+    </div>
+    <div class="ctas" style="--d:4"><a class="btn" href="#main">Ver las ofertas ↓</a><button class="btn ghost" id="vermayor">Ordenar por mayor descuento</button></div>
   </div>
-  <div class="collage" aria-hidden="true"><img src="img/p02.webp" alt="" style="--i:0"><img src="img/p00.webp" alt="" style="--i:1"><img src="img/p15.webp" alt="" style="--i:2"><img src="img/p30.webp" alt="" style="--i:3"><img src="img/p08.webp" alt="" style="--i:4"><img src="img/p21.webp" alt="" style="--i:5"></div>
+  <div class="marquee" aria-hidden="true"><div class="row"><img src="img/p15.webp" alt=""><img src="img/p00.webp" alt=""><img src="img/p01.webp" alt=""><img src="img/p13.webp" alt=""><img src="img/p36.webp" alt=""><img src="img/p08.webp" alt=""><img src="img/p20.webp" alt=""><img src="img/p22.webp" alt=""><img src="img/p27.webp" alt=""><img src="img/p15.webp" alt=""><img src="img/p00.webp" alt=""><img src="img/p01.webp" alt=""><img src="img/p13.webp" alt=""><img src="img/p36.webp" alt=""><img src="img/p08.webp" alt=""><img src="img/p20.webp" alt=""><img src="img/p22.webp" alt=""><img src="img/p27.webp" alt=""></div><div class="row rev"><img src="img/p02.webp" alt=""><img src="img/p04.webp" alt=""><img src="img/p09.webp" alt=""><img src="img/p10.webp" alt=""><img src="img/p12.webp" alt=""><img src="img/p14.webp" alt=""><img src="img/p16.webp" alt=""><img src="img/p17.webp" alt=""><img src="img/p19.webp" alt=""><img src="img/p02.webp" alt=""><img src="img/p04.webp" alt=""><img src="img/p09.webp" alt=""><img src="img/p10.webp" alt=""><img src="img/p12.webp" alt=""><img src="img/p14.webp" alt=""><img src="img/p16.webp" alt=""><img src="img/p17.webp" alt=""><img src="img/p19.webp" alt=""></div></div>
 </div></section>
-<section class="grp" id="calor">
-  <div class="wrap">
-    <header class="gh"><p class="num">01</p><h2>Sobrevivir al calor <em>(nivel: Pelopincho en el patio)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1ChwEou" target="_blank" rel="sponsored noopener"><img src="img/p00.webp" alt="Ventilador de pared y de piso Liliana VTF16P turbo con 5 palas color negro estructura color negro, 40.64cm de diámetro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+100 mil vendidos · ★ 4.6</p>
-    <h3>Ventilador de pared y de piso Liliana VTF16P turbo con 5 palas color negro estructura color negro, 40.64cm de diámetro</h3>
-    <p class="pr"><strong>$ 56.305</strong><s>$ 74.100</s><b class="off">24% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1ChwEou" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-4K2F" aria-label="Copiar código DHM70J-4K2F"><span>Código</span>DHM70J-4K2F</button>
-    </div>
+<div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+
+<nav class="filters" aria-label="Filtros"><div class="wrap">
+  <div class="chips" id="chips"></div>
+  <div class="ctrl">
+    <select id="sort" aria-label="Ordenar"><option value="rel">Destacados</option><option value="off">Mayor descuento</option><option value="save">Mayor ahorro en $</option><option value="v">Más vendidos</option><option value="p">Menor precio</option></select>
+    <button class="tog" id="favs" aria-pressed="false" title="Ver solo favoritos">♥ <span id="nfav">0</span></button>
   </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2tpKzvF" target="_blank" rel="sponsored noopener"><img src="img/p01.webp" alt="Juego De Cortinas Blackout Textil Presillas Ocultas Oferta!" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+100 mil vendidos · ★ 4.5</p>
-    <h3>Juego De Cortinas Blackout Textil Presillas Ocultas Oferta!</h3>
-    <p class="pr"><strong>$ 35.999</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2tpKzvF" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-N7D7" aria-label="Copiar código DHM70J-N7D7"><span>Código</span>DHM70J-N7D7</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1pMEYe7" target="_blank" rel="sponsored noopener"><img src="img/p02.webp" alt="Pileta Pelopincho 1076" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Pileta Pelopincho 1076</h3>
-    <p class="pr"><strong>$ 532.999</strong><s>$ 598.900</s><b class="off">11% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1pMEYe7" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-JPFD" aria-label="Copiar código DHM70J-JPFD"><span>Código</span>DHM70J-JPFD</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2ehNHSP" target="_blank" rel="sponsored noopener"><img src="img/p03.webp" alt="Hamaca De Agua Sillón Inflable Pileta Playa Colchoneta" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+1 mil vendidos · ★ 4.7</p>
-    <h3>Hamaca De Agua Sillón Inflable Pileta Playa Colchoneta</h3>
-    <p class="pr"><strong>$ 19.999</strong><s>$ 27.800</s><b class="off">28% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2ehNHSP" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-7D8K" aria-label="Copiar código DHM70J-7D8K"><span>Código</span>DHM70J-7D8K</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1JhcbYt" target="_blank" rel="sponsored noopener"><img src="img/p04.webp" alt="Humidificador Ultrasónico Gadnic K6 Vaporizador De Ambiente Ultrasonico" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.6</p>
-    <h3>Humidificador Ultrasónico Gadnic K6 Vaporizador De Ambiente Ultrasonico</h3>
-    <p class="pr"><strong>$ 57.629</strong><s>$ 108.700</s><b class="off">47% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1JhcbYt" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-JFAR" aria-label="Copiar código DHM70J-JFAR"><span>Código</span>DHM70J-JFAR</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="mosquitos">
-  <div class="wrap">
-    <header class="gh"><p class="num">02</p><h2>Guerra a los mosquitos <em>(nivel: tul de princesa)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1ze7efW" target="_blank" rel="sponsored noopener"><img src="img/p05.webp" alt="Tela Mosquitera Para Ventanas Insect Stop 1.30mx1.50m Tesa Color Blanco" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+5 mil vendidos · ★ 4.6</p>
-    <h3>Tela Mosquitera Para Ventanas Insect Stop 1.30mx1.50m Tesa Color Blanco</h3>
-    <p class="pr"><strong>$ 17.457</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1ze7efW" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-Y76S" aria-label="Copiar código DHM70J-Y76S"><span>Código</span>DHM70J-Y76S</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1iCMZXc" target="_blank" rel="sponsored noopener"><img src="img/p06.webp" alt="Cortina Mosquitero Para Puerta Magnética Moscas Mosquitos" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+5 mil vendidos · ★ 4.1</p>
-    <h3>Cortina Mosquitero Para Puerta Magnética Moscas Mosquitos</h3>
-    <p class="pr"><strong>$ 10.999</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1iCMZXc" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-KRB0" aria-label="Copiar código DHM70J-KRB0"><span>Código</span>DHM70J-KRB0</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/19GhGY7" target="_blank" rel="sponsored noopener"><img src="img/p07.webp" alt="Mosquitero Extensible De Tul Para Cama Dormitorio" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+5 mil vendidos · ★ 4.7</p>
-    <h3>Mosquitero Extensible De Tul Para Cama Dormitorio</h3>
-    <p class="pr"><strong>$ 13.425</strong><s>$ 17.900</s><b class="off">25% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/19GhGY7" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-93VY" aria-label="Copiar código DHM70J-93VY"><span>Código</span>DHM70J-93VY</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1uGWDg3" target="_blank" rel="sponsored noopener"><img src="img/p08.webp" alt="Crema Repelente Insectos Uso Diario Aloe Vera Off 196g" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+50 mil vendidos · ★ 4.7</p>
-    <h3>Crema Repelente Insectos Uso Diario Aloe Vera Off 196g</h3>
-    <p class="pr"><strong>$ 5.729</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1uGWDg3" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-YPGD" aria-label="Copiar código DHM70J-YPGD"><span>Código</span>DHM70J-YPGD</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="mate">
-  <div class="wrap">
-    <header class="gh"><p class="num">03</p><h2>Mate de competición <em>(nivel: luz para cebar de noche)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1ypDjua" target="_blank" rel="sponsored noopener"><img src="img/p09.webp" alt="Termo Termolar Revolution Negro 1 Lts" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Termo Termolar Revolution Negro 1 Lts</h3>
-    <p class="pr"><strong>$ 52.439</strong><s>$ 79.500</s><b class="off">34% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1ypDjua" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-R48T" aria-label="Copiar código DHM70J-R48T"><span>Código</span>DHM70J-R48T</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1CVvmzj" target="_blank" rel="sponsored noopener"><img src="img/p10.webp" alt="Mate Clasico De Acero Inoxidable Uso Extremo Thermio Termico" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Mate Clasico De Acero Inoxidable Uso Extremo Thermio Termico</h3>
-    <p class="pr"><strong>$ 17.999</strong><s>$ 20.000</s><b class="off">10% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1CVvmzj" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-8HJE" aria-label="Copiar código DHM70J-8HJE"><span>Código</span>DHM70J-8HJE</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2V4FKz1" target="_blank" rel="sponsored noopener"><img src="img/p11.webp" alt="Luminara Luz para Mate Classic LED Portátil Negro para Cebar Mate Perfecto" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+5 mil vendidos · ★ 4.5</p>
-    <h3>Luminara Luz para Mate Classic LED Portátil Negro para Cebar Mate Perfecto</h3>
-    <p class="pr"><strong>$ 4.352</strong><s>$ 5.100</s><b class="off">15% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2V4FKz1" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-GSTA" aria-label="Copiar código DHM70J-GSTA"><span>Código</span>DHM70J-GSTA</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1fGrkPy" target="_blank" rel="sponsored noopener"><img src="img/p12.webp" alt="Botella de acero inoxidable Ozz 960mL Negro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.9</p>
-    <h3>Botella de acero inoxidable Ozz 960mL Negro</h3>
-    <p class="pr"><strong>$ 28.884</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1fGrkPy" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-K5AD" aria-label="Copiar código DHM70J-K5AD"><span>Código</span>DHM70J-K5AD</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="wifi">
-  <div class="wrap">
-    <header class="gh"><p class="num">04</p><h2>El WiFi no llega al baño <em>(nivel: repetidor en el pasillo)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1rR7xcr" target="_blank" rel="sponsored noopener"><img src="img/p13.webp" alt="Extensor De Cobertura Tp-link Wi-fi Universal Ac750 Re200" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+100 mil vendidos · ★ 4.7</p>
-    <h3>Extensor De Cobertura Tp-link Wi-fi Universal Ac750 Re200</h3>
-    <p class="pr"><strong>$ 42.882</strong><s>$ 65.000</s><b class="off">34% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1rR7xcr" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-WEM2" aria-label="Copiar código DHM70J-WEM2"><span>Código</span>DHM70J-WEM2</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1atxPvu" target="_blank" rel="sponsored noopener"><img src="img/p14.webp" alt="Power Bank Cargador Portatil 20000mah Spica Sw-400 Bateria Color Negro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.7</p>
-    <h3>Power Bank Cargador Portatil 20000mah Spica Sw-400 Bateria Color Negro</h3>
-    <p class="pr"><strong>$ 46.499</strong><s>$ 98.900</s><b class="off">53% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1atxPvu" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-7NS7" aria-label="Copiar código DHM70J-7NS7"><span>Código</span>DHM70J-7NS7</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2oBRCsw" target="_blank" rel="sponsored noopener"><img src="img/p15.webp" alt="Auriculares Xiaomi Redmi Buds 6 Play Inalámbricos Bluetooth 5.4 36 h Negro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+250 mil vendidos · ★ 5.4</p>
-    <h3>Auriculares Xiaomi Redmi Buds 6 Play Inalámbricos Bluetooth 5.4 36 h Negro</h3>
-    <p class="pr"><strong>$ 22.950</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2oBRCsw" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-WDSC" aria-label="Copiar código DHM70J-WDSC"><span>Código</span>DHM70J-WDSC</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="asado">
-  <div class="wrap">
-    <header class="gh"><p class="num">05</p><h2>Asado de domingo <em>(nivel: chulengo propio)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1XQ2SKU" target="_blank" rel="sponsored noopener"><img src="img/p16.webp" alt="Juego De Cubiertos Tramontina Churrasco Dynamic X 12 Piezas Color Marrón" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.9</p>
-    <h3>Juego De Cubiertos Tramontina Churrasco Dynamic X 12 Piezas Color Marrón</h3>
-    <p class="pr"><strong>$ 38.677</strong><s>$ 47.700</s><b class="off">19% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1XQ2SKU" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-FQ1H" aria-label="Copiar código DHM70J-FQ1H"><span>Código</span>DHM70J-FQ1H</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2B4yhS1" target="_blank" rel="sponsored noopener"><img src="img/p17.webp" alt="Brasero De Mesa Enlozado Parrilla Bandeja Asado" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Brasero De Mesa Enlozado Parrilla Bandeja Asado</h3>
-    <p class="pr"><strong>$ 21.989</strong><s>$ 23.600</s><b class="off">7% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2B4yhS1" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-LK30" aria-label="Copiar código DHM70J-LK30"><span>Código</span>DHM70J-LK30</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2dPthJy" target="_blank" rel="sponsored noopener"><img src="img/p18.webp" alt="Parrilla Tromen Chulenguito A Leña Con Tapa" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+5 mil vendidos · ★ 4.7</p>
-    <h3>Parrilla Tromen Chulenguito A Leña Con Tapa</h3>
-    <p class="pr"><strong>$ 384.380</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2dPthJy" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-LKBM" aria-label="Copiar código DHM70J-LKBM"><span>Código</span>DHM70J-LKBM</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="gym">
-  <div class="wrap">
-    <header class="gh"><p class="num">06</p><h2>En forma sin gimnasio <em>(nivel: mancuernas de 25 kg)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/2Xhjr2c" target="_blank" rel="sponsored noopener"><img src="img/p19.webp" alt="Kit Mancuernas Y Barra Con Tope A Rosca 25 Kg Discos Pvc" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.7</p>
-    <h3>Kit Mancuernas Y Barra Con Tope A Rosca 25 Kg Discos Pvc</h3>
-    <p class="pr"><strong>$ 86.300</strong><s>$ 210.500</s><b class="off">59% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2Xhjr2c" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-681C" aria-label="Copiar código DHM70J-681C"><span>Código</span>DHM70J-681C</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1GqrasF" target="_blank" rel="sponsored noopener"><img src="img/p20.webp" alt="Masajeador Cervical Eléctrico Portatil Inalambrico Batería Recargable Usb Femmto Relajación Cuello Espalda Lumbar" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+50 mil vendidos · ★ 4.8</p>
-    <h3>Masajeador Cervical Eléctrico Portatil Inalambrico Batería Recargable Usb Femmto Relajación Cuello Espalda Lumbar</h3>
-    <p class="pr"><strong>$ 39.999</strong><s>$ 100.000</s><b class="off">60% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1GqrasF" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-HNP5" aria-label="Copiar código DHM70J-HNP5"><span>Código</span>DHM70J-HNP5</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1YCnmsL" target="_blank" rel="sponsored noopener"><img src="img/p21.webp" alt="Pistola Masajeadora Exp Mass Gadnic 30 velocidades 12 Cabezales Portátil Recargable LCD Motor Brushless Recuperación Muscular Silenciosa" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.9</p>
-    <h3>Pistola Masajeadora Exp Mass Gadnic 30 velocidades 12 Cabezales Portátil Recargable LCD Motor Brushless Recuperación Muscular Silenciosa</h3>
-    <p class="pr"><strong>$ 74.999</strong><s>$ 144.200</s><b class="off">48% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1YCnmsL" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-VRLT" aria-label="Copiar código DHM70J-VRLT"><span>Código</span>DHM70J-VRLT</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/25V4unn" target="_blank" rel="sponsored noopener"><img src="img/p22.webp" alt="Combo X2 Almohada 60x40 Inteligente Viscoelastica Con Funda" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+50 mil vendidos · ★ 4.5</p>
-    <h3>Combo X2 Almohada 60x40 Inteligente Viscoelastica Con Funda</h3>
-    <p class="pr"><strong>$ 32.743</strong><s>$ 74.400</s><b class="off">56% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/25V4unn" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-0BS8" aria-label="Copiar código DHM70J-0BS8"><span>Código</span>DHM70J-0BS8</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="cocina">
-  <div class="wrap">
-    <header class="gh"><p class="num">07</p><h2>Cocinar sin saber <em>(nivel: freidora de aire)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1uxXxGJ" target="_blank" rel="sponsored noopener"><img src="img/p23.webp" alt="Freidora De Aire Peabody Pe-afd720n 7,2l Visor 360º 11 Prog Color Negro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Freidora De Aire Peabody Pe-afd720n 7,2l Visor 360º 11 Prog Color Negro</h3>
-    <p class="pr"><strong>$ 130.174</strong><s>$ 245.600</s><b class="off">47% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1uxXxGJ" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-6JTN" aria-label="Copiar código DHM70J-6JTN"><span>Código</span>DHM70J-6JTN</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1eGPkgT" target="_blank" rel="sponsored noopener"><img src="img/p24.webp" alt="Cafetera Nescafé Dolce Gusto 230v Blanca Genio S Blanco" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.9</p>
-    <h3>Cafetera Nescafé Dolce Gusto 230v Blanca Genio S Blanco</h3>
-    <p class="pr"><strong>$ 179.999</strong><s>$ 352.900</s><b class="off">49% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1eGPkgT" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-X4LS" aria-label="Copiar código DHM70J-X4LS"><span>Código</span>DHM70J-X4LS</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2ToKj1B" target="_blank" rel="sponsored noopener"><img src="img/p25.webp" alt="Freidora De Aire Cuk By Gadnic 4.2L 1300W Air Fryer Digital Táctil Sin Aceite 5 Programas" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.7</p>
-    <h3>Freidora De Aire Cuk By Gadnic 4.2L 1300W Air Fryer Digital Táctil Sin Aceite 5 Programas</h3>
-    <p class="pr"><strong>$ 109.999</strong><s>$ 183.300</s><b class="off">40% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2ToKj1B" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-APDX" aria-label="Copiar código DHM70J-APDX"><span>Código</span>DHM70J-APDX</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="vacaciones">
-  <div class="wrap">
-    <header class="gh"><p class="num">08</p><h2>Vacaciones con poca plata <em>(nivel: reposera gravedad cero)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1TLhVmL" target="_blank" rel="sponsored noopener"><img src="img/p26.webp" alt="Reposera Silla Camping Playa Tela Premium Reforzada Gravedad Cero" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.7</p>
-    <h3>Reposera Silla Camping Playa Tela Premium Reforzada Gravedad Cero</h3>
-    <p class="pr"><strong>$ 29.490</strong><s>$ 37.800</s><b class="off">22% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1TLhVmL" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-FAVM" aria-label="Copiar código DHM70J-FAVM"><span>Código</span>DHM70J-FAVM</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2cm8ADM" target="_blank" rel="sponsored noopener"><img src="img/p27.webp" alt="Colchón Inflable Doble Klimber + Inflador + 2 Almohadas" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.7</p>
-    <h3>Colchón Inflable Doble Klimber + Inflador + 2 Almohadas</h3>
-    <p class="pr"><strong>$ 49.800</strong><s>$ 69.200</s><b class="off">28% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2cm8ADM" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-VMGL" aria-label="Copiar código DHM70J-VMGL"><span>Código</span>DHM70J-VMGL</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1oCYvy1" target="_blank" rel="sponsored noopener"><img src="img/p28.webp" alt="Pistola De Agua Mochila Tanque 1 Litro Infantil Pileta Playa" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.6</p>
-    <h3>Pistola De Agua Mochila Tanque 1 Litro Infantil Pileta Playa</h3>
-    <p class="pr"><strong>$ 14.750</strong><s>$ 25.000</s><b class="off">41% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1oCYvy1" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-RSGF" aria-label="Copiar código DHM70J-RSGF"><span>Código</span>DHM70J-RSGF</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1EdYo2u" target="_blank" rel="sponsored noopener"><img src="img/p29.webp" alt="Anteojos de sol polarizados Rusty Terdey con armazón y varillas G-Flex, color MBLK/S10, unisex, protección UV" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Anteojos de sol polarizados Rusty Terdey con armazón y varillas G-Flex, color MBLK/S10, unisex, protección UV</h3>
-    <p class="pr"><strong>$ 93.930</strong><s>$ 117.400</s><b class="off">20% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1EdYo2u" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-BKGP" aria-label="Copiar código DHM70J-BKGP"><span>Código</span>DHM70J-BKGP</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/339dUWv" target="_blank" rel="sponsored noopener"><img src="img/p30.webp" alt="Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.9</p>
-    <h3>Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa</h3>
-    <p class="pr"><strong>$ 47.990</strong><s>$ 96.000</s><b class="off">50% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/339dUWv" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-7DC9" aria-label="Copiar código DHM70J-7DC9"><span>Código</span>DHM70J-7DC9</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="cine">
-  <div class="wrap">
-    <header class="gh"><p class="num">09</p><h2>Cine en casa <em>(nivel: proyector en la pared)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/14WZgPF" target="_blank" rel="sponsored noopener"><img src="img/p31.webp" alt="Proyector mini ULTRAHD HY-300 8000lm blanco" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.5</p>
-    <h3>Proyector mini ULTRAHD HY-300 8000lm blanco</h3>
-    <p class="pr"><strong>$ 70.990</strong></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/14WZgPF" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-HT66" aria-label="Copiar código DHM70J-HT66"><span>Código</span>DHM70J-HT66</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1YAzRk3" target="_blank" rel="sponsored noopener"><img src="img/p32.webp" alt="Parlante Bluetooth Inalambrico SPICA SP-3312TM Luz Rgb Portatil Karaoke Radio Color Negro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.5</p>
-    <h3>Parlante Bluetooth Inalambrico SPICA SP-3312TM Luz Rgb Portatil Karaoke Radio Color Negro</h3>
-    <p class="pr"><strong>$ 86.999</strong><s>$ 119.200</s><b class="off">27% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1YAzRk3" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-2HUS" aria-label="Copiar código DHM70J-2HUS"><span>Código</span>DHM70J-2HUS</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section><section class="grp" id="vago">
-  <div class="wrap">
-    <header class="gh"><p class="num">10</p><h2>Ordenar sin moverse <em>(nivel: robot que barre solo)</em></h2></header>
-    <div class="grid"><article class="card">
-  <a class="ph" href="https://meli.la/1gvUJHS" target="_blank" rel="sponsored noopener"><img src="img/p33.webp" alt="Aspiradora Robot Trapeadora Gadnic Navegacion Laser Lds Mapeo 3d Succion 5000 Pa Trapeado App Tuya Autonomia 200 Minutos" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.8</p>
-    <h3>Aspiradora Robot Trapeadora Gadnic Navegacion Laser Lds Mapeo 3d Succion 5000 Pa Trapeado App Tuya Autonomia 200 Minutos</h3>
-    <p class="pr"><strong>$ 348.749</strong><s>$ 571.700</s><b class="off">39% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1gvUJHS" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-CHE2" aria-label="Copiar código DHM70J-CHE2"><span>Código</span>DHM70J-CHE2</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2P9RxC4" target="_blank" rel="sponsored noopener"><img src="img/p34.webp" alt="Organizador Zapatero LBS Zapatillas Botinero Estantes Desarmable Color Negro" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+100 mil vendidos · ★ 4.5</p>
-    <h3>Organizador Zapatero LBS Zapatillas Botinero Estantes Desarmable Color Negro</h3>
-    <p class="pr"><strong>$ 6.195</strong><s>$ 8.300</s><b class="off">25% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2P9RxC4" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-MMCL" aria-label="Copiar código DHM70J-MMCL"><span>Código</span>DHM70J-MMCL</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/2icde3v" target="_blank" rel="sponsored noopener"><img src="img/p35.webp" alt="Armario Desarmable Portátil Con Forro Doble Organizador" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.6</p>
-    <h3>Armario Desarmable Portátil Con Forro Doble Organizador</h3>
-    <p class="pr"><strong>$ 42.999</strong><s>$ 100.000</s><b class="off">57% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/2icde3v" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-EM99" aria-label="Copiar código DHM70J-EM99"><span>Código</span>DHM70J-EM99</button>
-    </div>
-  </div>
-</article><article class="card">
-  <a class="ph" href="https://meli.la/1ZNaKSU" target="_blank" rel="sponsored noopener"><img src="img/p36.webp" alt="Linterna Minero Cabeza Vincha Led Cob Punta Iman Recargable" loading="lazy" width="500" height="500"></a>
-  <div class="bd">
-    <p class="meta">+10 mil vendidos · ★ 4.6</p>
-    <h3>Linterna Minero Cabeza Vincha Led Cob Punta Iman Recargable</h3>
-    <p class="pr"><strong>$ 5.999</strong><s>$ 20.000</s><b class="off">70% OFF</b></p>
-    <div class="act">
-      <a class="btn" href="https://meli.la/1ZNaKSU" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
-      <button class="code" data-code="DHM70J-G84B" aria-label="Copiar código DHM70J-G84B"><span>Código</span>DHM70J-G84B</button>
-    </div>
-  </div>
-</article></div>
-  </div>
-</section>
+</div></nav>
+
+<main id="main"><div class="wrap"><p class="count" id="count" aria-live="polite"></p><div id="list"></div></div></main>
+
 <section class="how"><div class="wrap">
-  <h2>¿Viste el video y no podés tocar el link?</h2>
+  <h2>¿Viste el video y el link no se puede tocar?</h2>
   <div class="steps">
-    <p><b>Copiá el código</b> que aparece al final del video o en la tarjeta del producto.</p>
-    <p><b>Abrí Mercado Libre</b> y pegalo en el buscador, como si buscaras cualquier cosa.</p>
-    <p><b>Te lleva directo</b> al producto. Comprás igual que siempre, al mismo precio.</p>
+    <div><i>01</i><b>Copiá el código</b><p>Está al final del video y en cada tarjeta, abajo del botón.</p></div>
+    <div><i>02</i><b>Pegalo en Mercado Libre</b><p>En el buscador de la app, como si buscaras cualquier cosa.</p></div>
+    <div><i>03</i><b>Comprás como siempre</b><p>Mismo precio, mismas cuotas, Compra Protegida y devolución de Mercado Libre.</p></div>
   </div>
+  <div class="mlbox"><img src="img/ml.svg" alt=""><div><b>La compra la hacés en Mercado Libre</b>Nosotros solo te mostramos el producto: el pago, el envío y las devoluciones son de Mercado Libre.</div></div>
 </div></section>
-</main>
-<footer><div class="wrap"><p>Links de afiliado: si comprás, recibimos una comisión sin costo extra para vos.</p><p>Precios del 22/11/2026, pueden cambiar. No somos Mercado Libre.</p></div></footer>
-<div class="toast" role="status" aria-live="polite"></div>
+<footer><div class="wrap"><p>Sitio independiente de afiliados. Si comprás desde un link, recibimos una comisión sin costo extra para vos.</p><p>Precios y descuentos del 22/11/2026: pueden cambiar en Mercado Libre.</p></div></footer>
+<button class="totop" id="totop" aria-label="Volver arriba"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-const t=document.querySelector('.toast');let h;
-document.querySelectorAll('.code').forEach(b=>b.addEventListener('click',async()=>{
-  try{await navigator.clipboard.writeText(b.dataset.code)}catch(e){}
-  t.textContent='Código '+b.dataset.code+' copiado. Pegalo en el buscador de Mercado Libre.';
-  t.classList.add('on');clearTimeout(h);h=setTimeout(()=>t.classList.remove('on'),2600);
-}));
+const DATA=[{"s": "ventilador-pared-piso", "t": "Ventilador de pared y de piso Liliana VTF16P turbo con 5 palas color negro estructura color negro, 40.64cm de diámetro", "g": "calor", "p": 56305, "pa": 74100.0, "off": 24, "v": 100000, "r": 4.6, "img": "img/p00.webp", "u": "https://www.mercadolibre.com.ar/ventilador-de-pared-y-de-piso-liliana-vtf16p-turbo-con-5-palas-color-negro-estructura-color-negro-4064cm-de-diametro/p/MLA16245451?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-4K2F", "mv": false, "fin": ""}, {"s": "juego-cortinas-blackout", "t": "Juego De Cortinas Blackout Textil Presillas Ocultas Oferta!", "g": "calor", "p": 35999, "pa": 0, "off": 0, "v": 100000, "r": 4.5, "img": "img/p01.webp", "u": "https://articulo.mercadolibre.com.ar/MLA-700133917-juego-de-cortinas-blackout-textil-presillas-ocultas-oferta-_JM?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-N7D7", "mv": false, "fin": ""}, {"s": "pileta-pelopincho-1076", "t": "Pileta Pelopincho 1076", "g": "calor", "p": 532999, "pa": 598900.0, "off": 11, "v": 10000, "r": 4.8, "img": "img/p02.webp", "u": "https://www.mercadolibre.com.ar/pileta-pelopincho-1076/p/MLA8961668?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-JPFD", "mv": false, "fin": ""}, {"s": "hamaca-agua-sillon", "t": "Hamaca De Agua Sillón Inflable Pileta Playa Colchoneta", "g": "calor", "p": 19999, "pa": 27800.0, "off": 28, "v": 1000, "r": 4.7, "img": "img/p03.webp", "u": "https://www.mercadolibre.com.ar/hamaca-de-agua-sillon-inflable-pileta-playa-colchoneta/up/MLAU5751766406?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-7D8K", "mv": false, "fin": ""}, {"s": "humidificador-ultrasonico-gadnic", "t": "Humidificador Ultrasónico Gadnic K6 Vaporizador De Ambiente Ultrasonico", "g": "calor", "p": 57629, "pa": 108700.0, "off": 47, "v": 10000, "r": 4.6, "img": "img/p04.webp", "u": "https://www.mercadolibre.com.ar/humidificador-ultrasonico-gadnic-k6-vaporizador-de-ambiente-ultrasonico/p/MLA29063614?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-JFAR", "mv": false, "fin": ""}, {"s": "tela-mosquitera-ventanas", "t": "Tela Mosquitera Para Ventanas Insect Stop 1.30mx1.50m Tesa Color Blanco", "g": "mosquitos", "p": 17457, "pa": 0, "off": 0, "v": 5000, "r": 4.6, "img": "img/p05.webp", "u": "https://www.mercadolibre.com.ar/tela-mosquitera-para-ventanas-insect-stop-130mx150m-tesa-color-blanco/p/MLA57633240?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-Y76S", "mv": false, "fin": ""}, {"s": "cortina-mosquitero-puerta", "t": "Cortina Mosquitero Para Puerta Magnética Moscas Mosquitos", "g": "mosquitos", "p": 10999, "pa": 0, "off": 0, "v": 5000, "r": 4.1, "img": "img/p06.webp", "u": "https://www.mercadolibre.com.ar/cortina-mosquitero-para-puerta-magnetica-moscas-mosquitos/up/MLAU2867271901?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-KRB0", "mv": false, "fin": ""}, {"s": "mosquitero-extensible-tul", "t": "Mosquitero Extensible De Tul Para Cama Dormitorio", "g": "mosquitos", "p": 13425, "pa": 17900.0, "off": 25, "v": 5000, "r": 4.7, "img": "img/p07.webp", "u": "https://articulo.mercadolibre.com.ar/MLA-1244842714-mosquitero-extensible-de-tul-para-cama-dormitorio-_JM?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-93VY", "mv": false, "fin": ""}, {"s": "crema-repelente-insectos", "t": "Crema Repelente Insectos Uso Diario Aloe Vera Off 196g", "g": "mosquitos", "p": 5729, "pa": 0, "off": 0, "v": 50000, "r": 4.7, "img": "img/p08.webp", "u": "https://www.mercadolibre.com.ar/crema-repelente-insectos-uso-diario-aloe-vera-off-196g/p/MLA20854950?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-YPGD", "mv": false, "fin": ""}, {"s": "termo-termolar-revolution", "t": "Termo Termolar Revolution Negro 1 Lts", "g": "mate", "p": 52439, "pa": 79500.0, "off": 34, "v": 10000, "r": 4.8, "img": "img/p09.webp", "u": "https://www.mercadolibre.com.ar/termo-termolar-revolution-negro-1-lts/p/MLA26901728?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-R48T", "mv": false, "fin": ""}, {"s": "mate-clasico-acero", "t": "Mate Clasico De Acero Inoxidable Uso Extremo Thermio Termico", "g": "mate", "p": 17999, "pa": 20000.0, "off": 10, "v": 10000, "r": 4.8, "img": "img/p10.webp", "u": "https://articulo.mercadolibre.com.ar/MLA-1120511695-mate-clasico-de-acero-inoxidable-uso-extremo-thermio-termico-_JM?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-8HJE", "mv": false, "fin": ""}, {"s": "luminara-luz-mate", "t": "Luminara Luz para Mate Classic LED Portátil Negro para Cebar Mate Perfecto", "g": "mate", "p": 4352, "pa": 5100.0, "off": 15, "v": 5000, "r": 4.5, "img": "img/p11.webp", "u": "https://www.mercadolibre.com.ar/luminara-luz-para-mate-classic-led-portatil-negro-para-cebar-mate-perfecto/p/MLA52018700?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-GSTA", "mv": false, "fin": ""}, {"s": "botella-acero-inoxidable", "t": "Botella de acero inoxidable Ozz 960mL Negro", "g": "mate", "p": 28884, "pa": 0, "off": 0, "v": 10000, "r": 4.9, "img": "img/p12.webp", "u": "https://www.mercadolibre.com.ar/botella-de-acero-inoxidable-ozz-960ml-negro/p/MLA45680404?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-K5AD", "mv": false, "fin": ""}, {"s": "extensor-cobertura-link", "t": "Extensor De Cobertura Tp-link Wi-fi Universal Ac750 Re200", "g": "wifi", "p": 42882, "pa": 65000.0, "off": 34, "v": 100000, "r": 4.7, "img": "img/p13.webp", "u": "https://www.mercadolibre.com.ar/extensor-de-cobertura-tp-link-wi-fi-universal-ac750-re200/p/MLA21801056?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-WEM2", "mv": false, "fin": ""}, {"s": "power-bank-cargador", "t": "Power Bank Cargador Portatil 20000mah Spica Sw-400 Bateria Color Negro", "g": "wifi", "p": 46499, "pa": 98900.0, "off": 53, "v": 10000, "r": 4.7, "img": "img/p14.webp", "u": "https://www.mercadolibre.com.ar/power-bank-cargador-portatil-20000mah-spica-sw-400-bateria-color-negro/p/MLA22433254?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-7NS7", "mv": false, "fin": ""}, {"s": "auriculares-xiaomi-redmi", "t": "Auriculares Xiaomi Redmi Buds 6 Play Inalámbricos Bluetooth 5.4 36 h Negro", "g": "wifi", "p": 22950, "pa": 0, "off": 0, "v": 250000, "r": 5.4, "img": "img/p15.webp", "u": "https://www.mercadolibre.com.ar/auriculares-xiaomi-redmi-buds-6-play-inalambricos-bluetooth-54-36-h-negro/p/MLA39962085?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-WDSC", "mv": false, "fin": ""}, {"s": "juego-cubiertos-tramontina", "t": "Juego De Cubiertos Tramontina Churrasco Dynamic X 12 Piezas Color Marrón", "g": "asado", "p": 38677, "pa": 47700.0, "off": 19, "v": 10000, "r": 4.9, "img": "img/p16.webp", "u": "https://www.mercadolibre.com.ar/juego-de-cubiertos-tramontina-churrasco-dynamic-x-12-piezas-color-marron/p/MLA33311020?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-FQ1H", "mv": false, "fin": ""}, {"s": "brasero-mesa-enlozado", "t": "Brasero De Mesa Enlozado Parrilla Bandeja Asado", "g": "asado", "p": 21989, "pa": 23600.0, "off": 7, "v": 10000, "r": 4.8, "img": "img/p17.webp", "u": "https://www.mercadolibre.com.ar/brasero-de-mesa-enlozado-parrilla-bandeja-asado/p/MLA26786921?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-LK30", "mv": false, "fin": ""}, {"s": "parrilla-tromen-chulenguito", "t": "Parrilla Tromen Chulenguito A Leña Con Tapa", "g": "asado", "p": 384380, "pa": 0, "off": 0, "v": 5000, "r": 4.7, "img": "img/p18.webp", "u": "https://www.mercadolibre.com.ar/parrilla-tromen-chulenguito-a-lena-con-tapa/p/MLA40332258?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-LKBM", "mv": false, "fin": ""}, {"s": "kit-mancuernas-barra", "t": "Kit Mancuernas Y Barra Con Tope A Rosca 25 Kg Discos Pvc", "g": "gym", "p": 86300, "pa": 210500.0, "off": 59, "v": 10000, "r": 4.7, "img": "img/p19.webp", "u": "https://www.mercadolibre.com.ar/kit-mancuernas-y-barra-con-tope-a-rosca-25-kg-discos-pvc/p/MLA35569367?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-681C", "mv": false, "fin": ""}, {"s": "masajeador-cervical-electrico", "t": "Masajeador Cervical Eléctrico Portatil Inalambrico Batería Recargable Usb Femmto Relajación Cuello Espalda Lumbar", "g": "gym", "p": 39999, "pa": 100000.0, "off": 60, "v": 50000, "r": 4.8, "img": "img/p20.webp", "u": "https://www.mercadolibre.com.ar/masajeador-cervical-electrico-portatil-inalambrico-bateria-recargable-usb-femmto-relajacion-cuello-espalda-lumbar/p/MLA24127896?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-HNP5", "mv": true, "fin": ""}, {"s": "pistola-masajeadora-exp", "t": "Pistola Masajeadora Exp Mass Gadnic 30 velocidades 12 Cabezales Portátil Recargable LCD Motor Brushless Recuperación Muscular Silenciosa", "g": "gym", "p": 74999, "pa": 144200.0, "off": 48, "v": 10000, "r": 4.9, "img": "img/p21.webp", "u": "https://www.mercadolibre.com.ar/pistola-masajeadora-exp-mass-gadnic-30-velocidades-12-cabezales-portatil-recargable-lcd-motor-brushless-recuperacion-muscular-silenciosa/p/MLA25864048?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-VRLT", "mv": false, "fin": ""}, {"s": "combo-almohada-60x40", "t": "Combo X2 Almohada 60x40 Inteligente Viscoelastica Con Funda", "g": "gym", "p": 32743, "pa": 74400.0, "off": 56, "v": 50000, "r": 4.5, "img": "img/p22.webp", "u": "https://www.mercadolibre.com.ar/combo-x2-almohada-60x40-inteligente-viscoelastica-con-funda/up/MLAU140319642?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-0BS8", "mv": false, "fin": ""}, {"s": "freidora-aire-peabody", "t": "Freidora De Aire Peabody Pe-afd720n 7,2l Visor 360º 11 Prog Color Negro", "g": "cocina", "p": 130174, "pa": 245600.0, "off": 47, "v": 10000, "r": 4.8, "img": "img/p23.webp", "u": "https://www.mercadolibre.com.ar/freidora-de-aire-peabody-pe-afd720n-72l-visor-360-11-prog-color-negro/p/MLA41829394?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-6JTN", "mv": false, "fin": ""}, {"s": "cafetera-nescafe-dolce", "t": "Cafetera Nescafé Dolce Gusto 230v Blanca Genio S Blanco", "g": "cocina", "p": 179999, "pa": 352900.0, "off": 49, "v": 10000, "r": 4.9, "img": "img/p24.webp", "u": "https://www.mercadolibre.com.ar/cafetera-nescafe-dolce-gusto-230v-blanca-genio-s-blanco/p/MLA18060098?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-X4LS", "mv": false, "fin": ""}, {"s": "freidora-aire-cuk", "t": "Freidora De Aire Cuk By Gadnic 4.2L 1300W Air Fryer Digital Táctil Sin Aceite 5 Programas", "g": "cocina", "p": 109999, "pa": 183300.0, "off": 40, "v": 10000, "r": 4.7, "img": "img/p25.webp", "u": "https://www.mercadolibre.com.ar/freidora-de-aire-cuk-by-gadnic-42l-1300w-air-fryer-digital-tactil-sin-aceite-5-programas/p/MLA39458507?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-APDX", "mv": false, "fin": ""}, {"s": "sandwichera-tostadora-electrica", "t": "Sandwichera Tostadora Electrica Daewoo Antiadherente Color Negro", "g": "cocina", "p": 22268, "pa": 50600.0, "off": 56, "v": 10000, "r": 4.7, "img": "img/p26.webp", "u": "https://www.mercadolibre.com.ar/sandwichera-tostadora-electrica-daewoo-antiadherente-color-negro/p/MLA22618987?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-S6CT", "mv": true, "fin": ""}, {"s": "picadora-alimentos-yelmo", "t": "Picadora De Alimentos Yelmo Pc-5800 2 Velocidades 500w Amarillo Bol de vidrio de 2 litros", "g": "cocina", "p": 48715, "pa": 65000.0, "off": 25, "v": 50000, "r": 4.8, "img": "img/p27.webp", "u": "https://www.mercadolibre.com.ar/picadora-de-alimentos-yelmo-pc-5800-2-velocidades-500w-amarillo-bol-de-vidrio-de-2-litros/p/MLA19589081?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-2P94", "mv": false, "fin": ""}, {"s": "reposera-silla-camping", "t": "Reposera Silla Camping Playa Tela Premium Reforzada Gravedad Cero", "g": "vacaciones", "p": 29490, "pa": 37800.0, "off": 22, "v": 10000, "r": 4.7, "img": "img/p28.webp", "u": "https://www.mercadolibre.com.ar/reposera-silla-camping-playa-tela-premium-reforzada-gravedad-cero/p/MLA56624299?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-FAVM", "mv": true, "fin": ""}, {"s": "colchon-inflable-doble", "t": "Colchón Inflable Doble Klimber + Inflador + 2 Almohadas", "g": "vacaciones", "p": 49800, "pa": 69200.0, "off": 28, "v": 10000, "r": 4.7, "img": "img/p29.webp", "u": "https://www.mercadolibre.com.ar/colchon-inflable-doble-klimber-inflador-2-almohadas/p/MLA22764635?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-VMGL", "mv": false, "fin": ""}, {"s": "pistola-agua-mochila", "t": "Pistola De Agua Mochila Tanque 1 Litro Infantil Pileta Playa", "g": "vacaciones", "p": 14750, "pa": 25000.0, "off": 41, "v": 10000, "r": 4.6, "img": "img/p30.webp", "u": "https://articulo.mercadolibre.com.ar/MLA-828175127-pistola-de-agua-mochila-tanque-1-litro-infantil-pileta-playa-_JM?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-RSGF", "mv": false, "fin": ""}, {"s": "anteojos-sol-polarizados", "t": "Anteojos de sol polarizados Rusty Terdey con armazón y varillas G-Flex, color MBLK/S10, unisex, protección UV", "g": "vacaciones", "p": 93930, "pa": 117400.0, "off": 20, "v": 10000, "r": 4.8, "img": "img/p31.webp", "u": "https://www.mercadolibre.com.ar/anteojos-de-sol-polarizados-rusty-terdey-con-armazon-y-varillas-g-flex-color-mblks10-unisex-proteccion-uv/p/MLA21260861?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-BKGP", "mv": true, "fin": ""}, {"s": "mochila-viaje-carry", "t": "Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa", "g": "vacaciones", "p": 47990, "pa": 96000.0, "off": 50, "v": 10000, "r": 4.9, "img": "img/p32.webp", "u": "https://www.mercadolibre.com.ar/mochila-viaje-carry-on-avion-porta-notebook-waggs-negro-lisa/p/MLA43803009?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-7DC9", "mv": false, "fin": ""}, {"s": "proyector-mini-ultrahd", "t": "Proyector mini ULTRAHD HY-300 8000lm blanco", "g": "cine", "p": 70990, "pa": 0, "off": 0, "v": 10000, "r": 4.5, "img": "img/p33.webp", "u": "https://www.mercadolibre.com.ar/proyector-mini-ultrahd-hy-300-8000lm-blanco/p/MLA43932163?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-HT66", "mv": false, "fin": ""}, {"s": "parlante-bluetooth-inalambrico", "t": "Parlante Bluetooth Inalambrico SPICA SP-3312TM Luz Rgb Portatil Karaoke Radio Color Negro", "g": "cine", "p": 86999, "pa": 119200.0, "off": 27, "v": 10000, "r": 4.5, "img": "img/p34.webp", "u": "https://www.mercadolibre.com.ar/parlante-bluetooth-inalambrico-spica-sp-3312tm-luz-rgb-portatil-karaoke-radio-color-negro/p/MLA15485875?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-2HUS", "mv": false, "fin": ""}, {"s": "aspiradora-robot-trapeadora", "t": "Aspiradora Robot Trapeadora Gadnic Navegacion Laser Lds Mapeo 3d Succion 5000 Pa Trapeado App Tuya Autonomia 200 Minutos", "g": "vago", "p": 348749, "pa": 571700.0, "off": 39, "v": 10000, "r": 4.8, "img": "img/p35.webp", "u": "https://www.mercadolibre.com.ar/aspiradora-robot-trapeadora-gadnic-navegacion-laser-lds-mapeo-3d-succion-5000-pa-trapeado-app-tuya-autonomia-200-minutos/p/MLA61935849?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-CHE2", "mv": false, "fin": ""}, {"s": "organizador-zapatero-lbs", "t": "Organizador Zapatero LBS Zapatillas Botinero Estantes Desarmable Color Negro", "g": "vago", "p": 6195, "pa": 8300.0, "off": 25, "v": 100000, "r": 4.5, "img": "img/p36.webp", "u": "https://www.mercadolibre.com.ar/organizador-zapatero-lbs-zapatillas-botinero-estantes-desarmable-color-negro/p/MLA46752744?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-MMCL", "mv": false, "fin": ""}, {"s": "armario-desarmable-portatil", "t": "Armario Desarmable Portátil Con Forro Doble Organizador", "g": "vago", "p": 42999, "pa": 100000.0, "off": 57, "v": 10000, "r": 4.6, "img": "img/p37.webp", "u": "https://articulo.mercadolibre.com.ar/MLA-1499475595-armario-desarmable-portatil-con-forro-doble-organizador-_JM?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-EM99", "mv": false, "fin": ""}, {"s": "linterna-minero-cabeza", "t": "Linterna Minero Cabeza Vincha Led Cob Punta Iman Recargable", "g": "vago", "p": 5999, "pa": 20000.0, "off": 70, "v": 10000, "r": 4.6, "img": "img/p38.webp", "u": "https://www.mercadolibre.com.ar/linterna-minero-cabeza-vincha-led-cob-punta-iman-recargable/p/MLA29088717?matt_word=ignacioandino2005&matt_tool=22473167", "c": "DHM70J-G84B", "mv": false, "fin": ""}], GR=[{"id": "calor", "t": "Sobrevivir al calor", "e": "🥵", "n": 5}, {"id": "mosquitos", "t": "Guerra a los mosquitos", "e": "🦟", "n": 4}, {"id": "mate", "t": "Mate de competición", "e": "🧉", "n": 4}, {"id": "wifi", "t": "El WiFi no llega al baño", "e": "📶", "n": 3}, {"id": "asado", "t": "Asado de domingo", "e": "🥩", "n": 3}, {"id": "gym", "t": "En forma sin gimnasio", "e": "💪", "n": 4}, {"id": "cocina", "t": "Cocinar sin saber", "e": "🍳", "n": 5}, {"id": "vacaciones", "t": "Vacaciones con poca plata", "e": "🏖️", "n": 5}, {"id": "cine", "t": "Cine en casa", "e": "🍿", "n": 2}, {"id": "vago", "t": "Ordenar sin moverse", "e": "🛋️", "n": 4}];
+const $=s=>document.querySelector(s), fmt=n=>'$ '+Math.round(n).toLocaleString('es-AR');
+const vend=v=>v>=1000?`+${Math.round(v/1000)} mil vendidos`:v?`+${v} vendidos`:'';
+let st={g:'all',q:'',sort:'rel',fav:false};
+let favs=new Set();try{favs=new Set(JSON.parse(localStorage.getItem('nofav')||'[]'))}catch(e){}
+const saveFav=()=>{try{localStorage.setItem('nofav',JSON.stringify([...favs]))}catch(e){};$('#nfav').textContent=favs.size};
+const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const ML='<img src="img/ml.svg" alt="">';
+const heart='<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5c-2.2 4.6-9.2 9-9.2 9Z"/></svg>';
+const wa='<svg viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13 13 0 0 1-5-4.4 5.7 5.7 0 0 1-1.2-3c0-1.4.7-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.5Z"/></svg>';
+function card(x,i){
+  const gold=x.g==='relampago', big=x.off>=40&&!gold;
+  return `<article class="card${gold?' gold':''}" style="--i:${i%8}">
+  <a class="ph" href="go/${x.s}.html" target="_blank" rel="sponsored noopener"><img src="${x.img}" alt="${x.t.replace(/"/g,'')}" loading="lazy" width="500" height="500">
+   ${x.off?`<span class="off${gold?' gold':big?' big':''}">-${x.off}%</span>`:''}${gold?'<span class="tag fl">⚡ RELÁMPAGO</span>':x.mv||x.v>=50000?'<span class="tag">MÁS VENDIDO</span>':''}</a>
+  <button class="fav" data-s="${x.s}" aria-pressed="${favs.has(x.s)}" aria-label="Guardar en favoritos">${heart}</button>
+  <div class="bd"><p class="meta">${vend(x.v)}${x.r?` <span class="st">★ ${x.r}</span>`:''}</p><h3>${x.t}</h3>
+   <p class="pr"><strong>${fmt(x.p)}</strong>${x.pa?`<s>${fmt(x.pa)}</s>`:''}</p>
+   ${x.pa?`<span class="save">Ahorrás ${fmt(x.pa-x.p)}</span>`:''}
+   <div class="act"><a class="btn" href="go/${x.s}.html" target="_blank" rel="sponsored noopener">${ML}Ver oferta</a>
+    <button class="ib wa" data-wa="${x.s}" aria-label="Compartir por WhatsApp">${wa}</button>
+    ${x.c?`<button class="code" data-code="${x.c}" title="Copiar código para el buscador">${x.c}</button>`:''}</div></div></article>`}
+function render(){
+  const q=norm(st.q.trim());
+  let L=DATA.filter(x=>(st.g==='all'||x.g===st.g)&&(!q||norm(x.t+' '+x.g).includes(q))&&(!st.fav||favs.has(x.s)));
+  const S={off:(a,b)=>b.off-a.off,save:(a,b)=>(b.pa-b.p)-(a.pa-a.p),v:(a,b)=>b.v-a.v,p:(a,b)=>a.p-b.p}[st.sort];
+  let h='';
+  if(!L.length) h=`<div class="empty"><b>${st.fav?'Todavía no guardaste favoritos':'No encontramos eso'}</b>${st.fav?'Tocá el ♥ de un producto para guardarlo.':'Probá con otra palabra o mirá todas las categorías.'}</div>`;
+  else if(S||q||st.fav){L=S?[...L].sort(S):L;h=`<section class="sec"><div class="grid">${L.map(card).join('')}</div></section>`}
+  else for(const g of GR){const xs=L.filter(x=>x.g===g.id);if(!xs.length)continue;
+    h+=`<section class="sec${g.id==='relampago'?' flash':''}" id="s-${g.id}"><h2><span class="em">${g.e}</span>${g.t}<small>${xs.length} productos</small></h2><div class="grid">${xs.map(card).join('')}</div></section>`}
+  $('#count').textContent=`${L.length} ${L.length===1?'producto':'productos'}${q?` para “${st.q.trim()}”`:''}`;
+  $('#list').innerHTML=h; observe();
+}
+function go(){document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches?document.startViewTransition(render):render()}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -40px'});
+function observe(){document.querySelectorAll('.card:not(.in)').forEach(c=>io.observe(c))}
+$('#chips').innerHTML=`<button class="chip" data-g="all" aria-pressed="true">Todo <small>${DATA.length}</small></button>`+GR.map(g=>`<button class="chip${g.id==='relampago'?' gold':''}" data-g="${g.id}" aria-pressed="false">${g.e} ${g.t} <small>${g.n}</small></button>`).join('');
+$('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;st.g=b.dataset.g;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));go();$('#main').scrollIntoView({behavior:'smooth'})});
+let t;$('#q').addEventListener('input',e=>{st.q=e.target.value;clearTimeout(t);t=setTimeout(()=>{go();if(st.q&&scrollY<innerHeight*.6)$('#main').scrollIntoView({behavior:'smooth'})},180)});
+$('#sort').addEventListener('change',e=>{st.sort=e.target.value==='rel'?'rel':e.target.value;go()});
+$('#vermayor').addEventListener('click',()=>{$('#sort').value='off';st.sort='off';go();$('#main').scrollIntoView({behavior:'smooth'})});
+$('#favs').addEventListener('click',e=>{st.fav=!st.fav;e.currentTarget.setAttribute('aria-pressed',st.fav);go()});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus()}});
+const toast=$('#toast');let th;const say=m=>{toast.textContent=m;toast.classList.add('on');clearTimeout(th);th=setTimeout(()=>toast.classList.remove('on'),2600)};
+$('#list').addEventListener('click',async e=>{
+  const f=e.target.closest('.fav'),c=e.target.closest('.code'),w=e.target.closest('[data-wa]');
+  if(f){const s=f.dataset.s;favs.has(s)?favs.delete(s):favs.add(s);f.setAttribute('aria-pressed',favs.has(s));saveFav();say(favs.has(s)?'Guardado en favoritos ♥':'Sacado de favoritos');if(st.fav)go()}
+  if(c){try{await navigator.clipboard.writeText(c.dataset.code)}catch(_){}say('Código '+c.dataset.code+' copiado: pegalo en el buscador de Mercado Libre')}
+  if(w){const x=DATA.find(d=>d.s===w.dataset.wa);const url=location.href.split('#')[0].replace(/index\.html$/,'')+'go/'+x.s+'.html';
+    open('https://wa.me/?text='+encodeURIComponent(`Mirá esto: ${x.t} a ${fmt(x.p)}${x.off?` (${x.off}% OFF)`:''} ${url}`),'_blank','noopener')}
+});
+// contadores
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=performance.now(),D=1600;
+  (function step(n){const k=Math.min(1,(n-t0)/D),v=to*(1-Math.pow(1-k,4));el.textContent=pre+Math.round(v).toLocaleString('es-AR')+suf;if(k<1)requestAnimationFrame(step)})(t0);cio.unobserve(el)}));
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// ticker con los mayores descuentos
+const tk=[...DATA].sort((a,b)=>b.off-a.off).slice(0,10).map(x=>`<span>${x.t.split(' ').slice(0,3).join(' ')} −${x.off}%</span>`).join('');
+$("#tick").innerHTML=tk+tk;
+// barra y volver arriba
+addEventListener('scroll',()=>{$('#top').classList.toggle('scrolled',scrollY>10);$('#totop').classList.toggle('on',scrollY>900)},{passive:true});
+$('#totop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+saveFav();render();
+if(location.hash.startsWith('#s-')){const g=location.hash.slice(3);document.querySelector(`.chip[data-g="${g}"]`)?.click()}
 </script>
 </body>
 </html>
