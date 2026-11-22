@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nivel Oferta</title>
+<meta name="description" content="Los productos que aparecen en nuestros videos, con link directo y código para buscarlos en Mercado Libre.">
+<meta property="og:title" content="Nivel Oferta">
+<meta property="og:description" content="Lo que mostramos en los videos, con link directo.">
+<meta name="theme-color" content="#f5efe4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e0482a'/%3E%3Cpath d='M9 22V10l14 12V10' stroke='%23fff' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5efe4;--surface:#fffdf8;--ink:#17140f;--muted:#6d655a;--line:#e3d9c8;--accent:#e0482a;--accent-ink:#fff;--soft:#fbe3d6;--ok:#1f7a55;
+--r:14px;--ease:cubic-bezier(.23,1,.32,1);--gut:clamp(16px,4vw,48px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14120f;--surface:#1d1a16;--ink:#f3ede2;--muted:#a59c8e;--line:#2f2a23;--soft:#3a2219}}
+:root[data-theme="dark"]{--bg:#14120f;--surface:#1d1a16;--ink:#f3ede2;--muted:#a59c8e;--line:#2f2a23;--soft:#3a2219}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.5 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:9}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.mark{font:800 20px/1 "Bricolage Grotesque";letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.mark i{font-style:normal;color:var(--accent)}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;mask-image:linear-gradient(90deg,#000 90%,transparent)}
+.chips a{flex:none;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--muted);transition:background .2s,color .2s,border-color .2s}
+.chips a:hover{color:var(--ink);border-color:var(--ink)}
+.hero{min-height:calc(100svh - 60px);display:grid;align-items:center;padding:48px 0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.hero h1{font:800 clamp(40px,6.4vw,84px)/.98 "Bricolage Grotesque";letter-spacing:-.035em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:34ch}
+.facts{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.facts b{display:block;font:800 30px/1 "Bricolage Grotesque";letter-spacing:-.02em}
+.facts span{font-size:14px;color:var(--muted)}
+.cta{display:inline-flex;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:11px 18px;border-radius:10px;border:0;cursor:pointer;transition:transform .16s var(--ease),filter .2s}
+.btn:hover{filter:brightness(1.07)} .btn:active{transform:scale(.97)}
+.collage{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.collage img{width:100%;aspect-ratio:1;object-fit:contain;background:#fff;border-radius:var(--r);padding:10%;border:1px solid var(--line)}
+.collage img:nth-child(2),.collage img:nth-child(5){transform:translateY(28px)}
+.grp{padding:clamp(64px,9vw,112px) 0;border-top:1px solid var(--line)}
+.gh{display:flex;gap:18px;align-items:baseline;margin-bottom:36px}
+.num{font:700 14px/1 "Bricolage Grotesque";color:var(--accent)}
+.gh h2{font:800 clamp(28px,3.6vw,46px)/1.05 "Bricolage Grotesque";letter-spacing:-.03em;text-wrap:balance}
+.gh h2 em{font-style:normal;font-weight:500;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+@media (hover:hover){.card:hover{transform:translateY(-2px);box-shadow:0 14px 30px -18px rgba(40,25,10,.35)}.card:hover .ph img{transform:scale(1.03)}}
+.ph{display:block;background:#fff;aspect-ratio:1;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:contain;padding:9%;transition:transform .45s var(--ease)}
+.bd{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.meta{font-size:13px;color:var(--muted)}
+.card h3{font-size:15px;font-weight:500;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:2px}
+.pr strong{font:700 22px/1.1 "Bricolage Grotesque";letter-spacing:-.02em}
+.pr s{font-size:13px;color:var(--muted)}
+.off{font-size:12px;color:var(--ok);font-weight:600}
+.act{display:flex;gap:8px;margin-top:auto;padding-top:10px;flex-wrap:wrap}
+.act .btn{flex:1;font-size:14px;padding:10px 12px;white-space:nowrap}
+.code{font:600 12px/1.1 ui-monospace,monospace;background:var(--soft);color:var(--ink);border:0;border-radius:10px;padding:7px 10px;cursor:pointer;text-align:left;transition:transform .16s var(--ease)}
+.code span{display:block;font:500 10px/1.2 "Instrument Sans";color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.code:active{transform:scale(.96)}
+.how{padding:clamp(64px,9vw,112px) 0;border-top:1px solid var(--line)}
+.how h2{font:800 clamp(28px,3.6vw,46px)/1.05 "Bricolage Grotesque";letter-spacing:-.03em;max-width:18ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;counter-reset:s}
+.steps p{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;color:var(--muted)}
+.steps p::before{counter-increment:s;content:counter(s);display:block;font:800 34px/1 "Bricolage Grotesque";color:var(--accent);margin-bottom:12px}
+.steps b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 0;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s var(--ease);pointer-events:none;z-index:9}
+.toast.on{opacity:1;transform:none}
+[data-enter]>*{animation:up .7s var(--ease) both;animation-delay:calc(var(--d,0)*70ms)}
+.collage img{animation:pop .7s var(--ease) both;animation-delay:calc(200ms + var(--i)*60ms)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
+@keyframes pop{from{opacity:0;scale:.94}}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{min-height:auto}.collage{order:-1}.collage img:nth-child(n){transform:none}.steps{grid-template-columns:1fr}}
+@media (max-width:480px){.chips{display:none}.grid{grid-template-columns:1fr 1fr;gap:10px}.bd{padding:12px}.pr strong{font-size:18px}.act{flex-direction:column}.facts{gap:18px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<nav><div class="wrap"><a class="mark" href="#top">nivel<i>:</i> oferta</a><div class="chips"><a href="#calor">Sobrevivir al calor</a><a href="#mosquitos">Guerra a los mosquitos</a><a href="#mate">Mate de competición</a><a href="#wifi">El WiFi no llega al baño</a><a href="#asado">Asado de domingo</a><a href="#gym">En forma sin gimnasio</a><a href="#cocina">Cocinar sin saber</a><a href="#vacaciones">Vacaciones con poca plata</a><a href="#cine">Cine en casa</a><a href="#vago">Ordenar sin moverse</a></div></div></nav>
+<main id="main">
+<section class="hero" id="top"><div class="wrap">
+  <div data-enter>
+    <h1 style="--d:0">Lo que sale en los videos, <em>con link directo.</em></h1>
+    <p class="lead" style="--d:1">Cada producto de nuestros memes, elegido entre los más vendidos de Mercado Libre. Tocá el botón o copiá el código y pegalo en el buscador.</p>
+    <div class="facts" style="--d:2"><div><b>37</b><span>productos</span></div><div><b>10</b><span>temas</span></div><div><b>+10 mil</b><span>ventas cada uno, casi todos</span></div></div>
+    <a class="btn cta" href="#calor" style="--d:3">Ver los productos</a>
+  </div>
+  <div class="collage" aria-hidden="true"><img src="img/p02.webp" alt="" style="--i:0"><img src="img/p00.webp" alt="" style="--i:1"><img src="img/p15.webp" alt="" style="--i:2"><img src="img/p30.webp" alt="" style="--i:3"><img src="img/p08.webp" alt="" style="--i:4"><img src="img/p21.webp" alt="" style="--i:5"></div>
+</div></section>
+<section class="grp" id="calor">
+  <div class="wrap">
+    <header class="gh"><p class="num">01</p><h2>Sobrevivir al calor <em>(nivel: Pelopincho en el patio)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1ChwEou" target="_blank" rel="sponsored noopener"><img src="img/p00.webp" alt="Ventilador de pared y de piso Liliana VTF16P turbo con 5 palas color negro estructura color negro, 40.64cm de diámetro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+100 mil vendidos · ★ 4.6</p>
+    <h3>Ventilador de pared y de piso Liliana VTF16P turbo con 5 palas color negro estructura color negro, 40.64cm de diámetro</h3>
+    <p class="pr"><strong>$ 56.305</strong><s>$ 74.100</s><b class="off">24% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1ChwEou" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-4K2F" aria-label="Copiar código DHM70J-4K2F"><span>Código</span>DHM70J-4K2F</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2tpKzvF" target="_blank" rel="sponsored noopener"><img src="img/p01.webp" alt="Juego De Cortinas Blackout Textil Presillas Ocultas Oferta!" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+100 mil vendidos · ★ 4.5</p>
+    <h3>Juego De Cortinas Blackout Textil Presillas Ocultas Oferta!</h3>
+    <p class="pr"><strong>$ 35.999</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2tpKzvF" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-N7D7" aria-label="Copiar código DHM70J-N7D7"><span>Código</span>DHM70J-N7D7</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1pMEYe7" target="_blank" rel="sponsored noopener"><img src="img/p02.webp" alt="Pileta Pelopincho 1076" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Pileta Pelopincho 1076</h3>
+    <p class="pr"><strong>$ 532.999</strong><s>$ 598.900</s><b class="off">11% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1pMEYe7" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-JPFD" aria-label="Copiar código DHM70J-JPFD"><span>Código</span>DHM70J-JPFD</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2ehNHSP" target="_blank" rel="sponsored noopener"><img src="img/p03.webp" alt="Hamaca De Agua Sillón Inflable Pileta Playa Colchoneta" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+1 mil vendidos · ★ 4.7</p>
+    <h3>Hamaca De Agua Sillón Inflable Pileta Playa Colchoneta</h3>
+    <p class="pr"><strong>$ 19.999</strong><s>$ 27.800</s><b class="off">28% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2ehNHSP" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-7D8K" aria-label="Copiar código DHM70J-7D8K"><span>Código</span>DHM70J-7D8K</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1JhcbYt" target="_blank" rel="sponsored noopener"><img src="img/p04.webp" alt="Humidificador Ultrasónico Gadnic K6 Vaporizador De Ambiente Ultrasonico" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.6</p>
+    <h3>Humidificador Ultrasónico Gadnic K6 Vaporizador De Ambiente Ultrasonico</h3>
+    <p class="pr"><strong>$ 57.629</strong><s>$ 108.700</s><b class="off">47% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1JhcbYt" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-JFAR" aria-label="Copiar código DHM70J-JFAR"><span>Código</span>DHM70J-JFAR</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="mosquitos">
+  <div class="wrap">
+    <header class="gh"><p class="num">02</p><h2>Guerra a los mosquitos <em>(nivel: tul de princesa)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1ze7efW" target="_blank" rel="sponsored noopener"><img src="img/p05.webp" alt="Tela Mosquitera Para Ventanas Insect Stop 1.30mx1.50m Tesa Color Blanco" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+5 mil vendidos · ★ 4.6</p>
+    <h3>Tela Mosquitera Para Ventanas Insect Stop 1.30mx1.50m Tesa Color Blanco</h3>
+    <p class="pr"><strong>$ 17.457</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1ze7efW" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-Y76S" aria-label="Copiar código DHM70J-Y76S"><span>Código</span>DHM70J-Y76S</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1iCMZXc" target="_blank" rel="sponsored noopener"><img src="img/p06.webp" alt="Cortina Mosquitero Para Puerta Magnética Moscas Mosquitos" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+5 mil vendidos · ★ 4.1</p>
+    <h3>Cortina Mosquitero Para Puerta Magnética Moscas Mosquitos</h3>
+    <p class="pr"><strong>$ 10.999</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1iCMZXc" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-KRB0" aria-label="Copiar código DHM70J-KRB0"><span>Código</span>DHM70J-KRB0</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/19GhGY7" target="_blank" rel="sponsored noopener"><img src="img/p07.webp" alt="Mosquitero Extensible De Tul Para Cama Dormitorio" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+5 mil vendidos · ★ 4.7</p>
+    <h3>Mosquitero Extensible De Tul Para Cama Dormitorio</h3>
+    <p class="pr"><strong>$ 13.425</strong><s>$ 17.900</s><b class="off">25% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/19GhGY7" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-93VY" aria-label="Copiar código DHM70J-93VY"><span>Código</span>DHM70J-93VY</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1uGWDg3" target="_blank" rel="sponsored noopener"><img src="img/p08.webp" alt="Crema Repelente Insectos Uso Diario Aloe Vera Off 196g" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+50 mil vendidos · ★ 4.7</p>
+    <h3>Crema Repelente Insectos Uso Diario Aloe Vera Off 196g</h3>
+    <p class="pr"><strong>$ 5.729</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1uGWDg3" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-YPGD" aria-label="Copiar código DHM70J-YPGD"><span>Código</span>DHM70J-YPGD</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="mate">
+  <div class="wrap">
+    <header class="gh"><p class="num">03</p><h2>Mate de competición <em>(nivel: luz para cebar de noche)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1ypDjua" target="_blank" rel="sponsored noopener"><img src="img/p09.webp" alt="Termo Termolar Revolution Negro 1 Lts" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Termo Termolar Revolution Negro 1 Lts</h3>
+    <p class="pr"><strong>$ 52.439</strong><s>$ 79.500</s><b class="off">34% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1ypDjua" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-R48T" aria-label="Copiar código DHM70J-R48T"><span>Código</span>DHM70J-R48T</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1CVvmzj" target="_blank" rel="sponsored noopener"><img src="img/p10.webp" alt="Mate Clasico De Acero Inoxidable Uso Extremo Thermio Termico" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Mate Clasico De Acero Inoxidable Uso Extremo Thermio Termico</h3>
+    <p class="pr"><strong>$ 17.999</strong><s>$ 20.000</s><b class="off">10% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1CVvmzj" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-8HJE" aria-label="Copiar código DHM70J-8HJE"><span>Código</span>DHM70J-8HJE</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2V4FKz1" target="_blank" rel="sponsored noopener"><img src="img/p11.webp" alt="Luminara Luz para Mate Classic LED Portátil Negro para Cebar Mate Perfecto" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+5 mil vendidos · ★ 4.5</p>
+    <h3>Luminara Luz para Mate Classic LED Portátil Negro para Cebar Mate Perfecto</h3>
+    <p class="pr"><strong>$ 4.352</strong><s>$ 5.100</s><b class="off">15% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2V4FKz1" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-GSTA" aria-label="Copiar código DHM70J-GSTA"><span>Código</span>DHM70J-GSTA</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1fGrkPy" target="_blank" rel="sponsored noopener"><img src="img/p12.webp" alt="Botella de acero inoxidable Ozz 960mL Negro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.9</p>
+    <h3>Botella de acero inoxidable Ozz 960mL Negro</h3>
+    <p class="pr"><strong>$ 28.884</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1fGrkPy" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-K5AD" aria-label="Copiar código DHM70J-K5AD"><span>Código</span>DHM70J-K5AD</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="wifi">
+  <div class="wrap">
+    <header class="gh"><p class="num">04</p><h2>El WiFi no llega al baño <em>(nivel: repetidor en el pasillo)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1rR7xcr" target="_blank" rel="sponsored noopener"><img src="img/p13.webp" alt="Extensor De Cobertura Tp-link Wi-fi Universal Ac750 Re200" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+100 mil vendidos · ★ 4.7</p>
+    <h3>Extensor De Cobertura Tp-link Wi-fi Universal Ac750 Re200</h3>
+    <p class="pr"><strong>$ 42.882</strong><s>$ 65.000</s><b class="off">34% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1rR7xcr" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-WEM2" aria-label="Copiar código DHM70J-WEM2"><span>Código</span>DHM70J-WEM2</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1atxPvu" target="_blank" rel="sponsored noopener"><img src="img/p14.webp" alt="Power Bank Cargador Portatil 20000mah Spica Sw-400 Bateria Color Negro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.7</p>
+    <h3>Power Bank Cargador Portatil 20000mah Spica Sw-400 Bateria Color Negro</h3>
+    <p class="pr"><strong>$ 46.499</strong><s>$ 98.900</s><b class="off">53% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1atxPvu" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-7NS7" aria-label="Copiar código DHM70J-7NS7"><span>Código</span>DHM70J-7NS7</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2oBRCsw" target="_blank" rel="sponsored noopener"><img src="img/p15.webp" alt="Auriculares Xiaomi Redmi Buds 6 Play Inalámbricos Bluetooth 5.4 36 h Negro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+250 mil vendidos · ★ 5.4</p>
+    <h3>Auriculares Xiaomi Redmi Buds 6 Play Inalámbricos Bluetooth 5.4 36 h Negro</h3>
+    <p class="pr"><strong>$ 22.950</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2oBRCsw" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-WDSC" aria-label="Copiar código DHM70J-WDSC"><span>Código</span>DHM70J-WDSC</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="asado">
+  <div class="wrap">
+    <header class="gh"><p class="num">05</p><h2>Asado de domingo <em>(nivel: chulengo propio)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1XQ2SKU" target="_blank" rel="sponsored noopener"><img src="img/p16.webp" alt="Juego De Cubiertos Tramontina Churrasco Dynamic X 12 Piezas Color Marrón" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.9</p>
+    <h3>Juego De Cubiertos Tramontina Churrasco Dynamic X 12 Piezas Color Marrón</h3>
+    <p class="pr"><strong>$ 38.677</strong><s>$ 47.700</s><b class="off">19% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1XQ2SKU" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-FQ1H" aria-label="Copiar código DHM70J-FQ1H"><span>Código</span>DHM70J-FQ1H</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2B4yhS1" target="_blank" rel="sponsored noopener"><img src="img/p17.webp" alt="Brasero De Mesa Enlozado Parrilla Bandeja Asado" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Brasero De Mesa Enlozado Parrilla Bandeja Asado</h3>
+    <p class="pr"><strong>$ 21.989</strong><s>$ 23.600</s><b class="off">7% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2B4yhS1" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-LK30" aria-label="Copiar código DHM70J-LK30"><span>Código</span>DHM70J-LK30</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2dPthJy" target="_blank" rel="sponsored noopener"><img src="img/p18.webp" alt="Parrilla Tromen Chulenguito A Leña Con Tapa" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+5 mil vendidos · ★ 4.7</p>
+    <h3>Parrilla Tromen Chulenguito A Leña Con Tapa</h3>
+    <p class="pr"><strong>$ 384.380</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2dPthJy" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-LKBM" aria-label="Copiar código DHM70J-LKBM"><span>Código</span>DHM70J-LKBM</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="gym">
+  <div class="wrap">
+    <header class="gh"><p class="num">06</p><h2>En forma sin gimnasio <em>(nivel: mancuernas de 25 kg)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/2Xhjr2c" target="_blank" rel="sponsored noopener"><img src="img/p19.webp" alt="Kit Mancuernas Y Barra Con Tope A Rosca 25 Kg Discos Pvc" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.7</p>
+    <h3>Kit Mancuernas Y Barra Con Tope A Rosca 25 Kg Discos Pvc</h3>
+    <p class="pr"><strong>$ 86.300</strong><s>$ 210.500</s><b class="off">59% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2Xhjr2c" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-681C" aria-label="Copiar código DHM70J-681C"><span>Código</span>DHM70J-681C</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1GqrasF" target="_blank" rel="sponsored noopener"><img src="img/p20.webp" alt="Masajeador Cervical Eléctrico Portatil Inalambrico Batería Recargable Usb Femmto Relajación Cuello Espalda Lumbar" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+50 mil vendidos · ★ 4.8</p>
+    <h3>Masajeador Cervical Eléctrico Portatil Inalambrico Batería Recargable Usb Femmto Relajación Cuello Espalda Lumbar</h3>
+    <p class="pr"><strong>$ 39.999</strong><s>$ 100.000</s><b class="off">60% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1GqrasF" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-HNP5" aria-label="Copiar código DHM70J-HNP5"><span>Código</span>DHM70J-HNP5</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1YCnmsL" target="_blank" rel="sponsored noopener"><img src="img/p21.webp" alt="Pistola Masajeadora Exp Mass Gadnic 30 velocidades 12 Cabezales Portátil Recargable LCD Motor Brushless Recuperación Muscular Silenciosa" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.9</p>
+    <h3>Pistola Masajeadora Exp Mass Gadnic 30 velocidades 12 Cabezales Portátil Recargable LCD Motor Brushless Recuperación Muscular Silenciosa</h3>
+    <p class="pr"><strong>$ 74.999</strong><s>$ 144.200</s><b class="off">48% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1YCnmsL" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-VRLT" aria-label="Copiar código DHM70J-VRLT"><span>Código</span>DHM70J-VRLT</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/25V4unn" target="_blank" rel="sponsored noopener"><img src="img/p22.webp" alt="Combo X2 Almohada 60x40 Inteligente Viscoelastica Con Funda" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+50 mil vendidos · ★ 4.5</p>
+    <h3>Combo X2 Almohada 60x40 Inteligente Viscoelastica Con Funda</h3>
+    <p class="pr"><strong>$ 32.743</strong><s>$ 74.400</s><b class="off">56% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/25V4unn" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-0BS8" aria-label="Copiar código DHM70J-0BS8"><span>Código</span>DHM70J-0BS8</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="cocina">
+  <div class="wrap">
+    <header class="gh"><p class="num">07</p><h2>Cocinar sin saber <em>(nivel: freidora de aire)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1uxXxGJ" target="_blank" rel="sponsored noopener"><img src="img/p23.webp" alt="Freidora De Aire Peabody Pe-afd720n 7,2l Visor 360º 11 Prog Color Negro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Freidora De Aire Peabody Pe-afd720n 7,2l Visor 360º 11 Prog Color Negro</h3>
+    <p class="pr"><strong>$ 130.174</strong><s>$ 245.600</s><b class="off">47% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1uxXxGJ" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-6JTN" aria-label="Copiar código DHM70J-6JTN"><span>Código</span>DHM70J-6JTN</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1eGPkgT" target="_blank" rel="sponsored noopener"><img src="img/p24.webp" alt="Cafetera Nescafé Dolce Gusto 230v Blanca Genio S Blanco" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.9</p>
+    <h3>Cafetera Nescafé Dolce Gusto 230v Blanca Genio S Blanco</h3>
+    <p class="pr"><strong>$ 179.999</strong><s>$ 352.900</s><b class="off">49% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1eGPkgT" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-X4LS" aria-label="Copiar código DHM70J-X4LS"><span>Código</span>DHM70J-X4LS</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2ToKj1B" target="_blank" rel="sponsored noopener"><img src="img/p25.webp" alt="Freidora De Aire Cuk By Gadnic 4.2L 1300W Air Fryer Digital Táctil Sin Aceite 5 Programas" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.7</p>
+    <h3>Freidora De Aire Cuk By Gadnic 4.2L 1300W Air Fryer Digital Táctil Sin Aceite 5 Programas</h3>
+    <p class="pr"><strong>$ 109.999</strong><s>$ 183.300</s><b class="off">40% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2ToKj1B" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-APDX" aria-label="Copiar código DHM70J-APDX"><span>Código</span>DHM70J-APDX</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="vacaciones">
+  <div class="wrap">
+    <header class="gh"><p class="num">08</p><h2>Vacaciones con poca plata <em>(nivel: reposera gravedad cero)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1TLhVmL" target="_blank" rel="sponsored noopener"><img src="img/p26.webp" alt="Reposera Silla Camping Playa Tela Premium Reforzada Gravedad Cero" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.7</p>
+    <h3>Reposera Silla Camping Playa Tela Premium Reforzada Gravedad Cero</h3>
+    <p class="pr"><strong>$ 29.490</strong><s>$ 37.800</s><b class="off">22% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1TLhVmL" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-FAVM" aria-label="Copiar código DHM70J-FAVM"><span>Código</span>DHM70J-FAVM</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2cm8ADM" target="_blank" rel="sponsored noopener"><img src="img/p27.webp" alt="Colchón Inflable Doble Klimber + Inflador + 2 Almohadas" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.7</p>
+    <h3>Colchón Inflable Doble Klimber + Inflador + 2 Almohadas</h3>
+    <p class="pr"><strong>$ 49.800</strong><s>$ 69.200</s><b class="off">28% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2cm8ADM" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-VMGL" aria-label="Copiar código DHM70J-VMGL"><span>Código</span>DHM70J-VMGL</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1oCYvy1" target="_blank" rel="sponsored noopener"><img src="img/p28.webp" alt="Pistola De Agua Mochila Tanque 1 Litro Infantil Pileta Playa" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.6</p>
+    <h3>Pistola De Agua Mochila Tanque 1 Litro Infantil Pileta Playa</h3>
+    <p class="pr"><strong>$ 14.750</strong><s>$ 25.000</s><b class="off">41% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1oCYvy1" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-RSGF" aria-label="Copiar código DHM70J-RSGF"><span>Código</span>DHM70J-RSGF</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1EdYo2u" target="_blank" rel="sponsored noopener"><img src="img/p29.webp" alt="Anteojos de sol polarizados Rusty Terdey con armazón y varillas G-Flex, color MBLK/S10, unisex, protección UV" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Anteojos de sol polarizados Rusty Terdey con armazón y varillas G-Flex, color MBLK/S10, unisex, protección UV</h3>
+    <p class="pr"><strong>$ 93.930</strong><s>$ 117.400</s><b class="off">20% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1EdYo2u" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-BKGP" aria-label="Copiar código DHM70J-BKGP"><span>Código</span>DHM70J-BKGP</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/339dUWv" target="_blank" rel="sponsored noopener"><img src="img/p30.webp" alt="Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.9</p>
+    <h3>Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa</h3>
+    <p class="pr"><strong>$ 47.990</strong><s>$ 96.000</s><b class="off">50% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/339dUWv" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-7DC9" aria-label="Copiar código DHM70J-7DC9"><span>Código</span>DHM70J-7DC9</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="cine">
+  <div class="wrap">
+    <header class="gh"><p class="num">09</p><h2>Cine en casa <em>(nivel: proyector en la pared)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/14WZgPF" target="_blank" rel="sponsored noopener"><img src="img/p31.webp" alt="Proyector mini ULTRAHD HY-300 8000lm blanco" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.5</p>
+    <h3>Proyector mini ULTRAHD HY-300 8000lm blanco</h3>
+    <p class="pr"><strong>$ 70.990</strong></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/14WZgPF" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-HT66" aria-label="Copiar código DHM70J-HT66"><span>Código</span>DHM70J-HT66</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1YAzRk3" target="_blank" rel="sponsored noopener"><img src="img/p32.webp" alt="Parlante Bluetooth Inalambrico SPICA SP-3312TM Luz Rgb Portatil Karaoke Radio Color Negro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.5</p>
+    <h3>Parlante Bluetooth Inalambrico SPICA SP-3312TM Luz Rgb Portatil Karaoke Radio Color Negro</h3>
+    <p class="pr"><strong>$ 86.999</strong><s>$ 119.200</s><b class="off">27% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1YAzRk3" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-2HUS" aria-label="Copiar código DHM70J-2HUS"><span>Código</span>DHM70J-2HUS</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section><section class="grp" id="vago">
+  <div class="wrap">
+    <header class="gh"><p class="num">10</p><h2>Ordenar sin moverse <em>(nivel: robot que barre solo)</em></h2></header>
+    <div class="grid"><article class="card">
+  <a class="ph" href="https://meli.la/1gvUJHS" target="_blank" rel="sponsored noopener"><img src="img/p33.webp" alt="Aspiradora Robot Trapeadora Gadnic Navegacion Laser Lds Mapeo 3d Succion 5000 Pa Trapeado App Tuya Autonomia 200 Minutos" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.8</p>
+    <h3>Aspiradora Robot Trapeadora Gadnic Navegacion Laser Lds Mapeo 3d Succion 5000 Pa Trapeado App Tuya Autonomia 200 Minutos</h3>
+    <p class="pr"><strong>$ 348.749</strong><s>$ 571.700</s><b class="off">39% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1gvUJHS" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-CHE2" aria-label="Copiar código DHM70J-CHE2"><span>Código</span>DHM70J-CHE2</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2P9RxC4" target="_blank" rel="sponsored noopener"><img src="img/p34.webp" alt="Organizador Zapatero LBS Zapatillas Botinero Estantes Desarmable Color Negro" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+100 mil vendidos · ★ 4.5</p>
+    <h3>Organizador Zapatero LBS Zapatillas Botinero Estantes Desarmable Color Negro</h3>
+    <p class="pr"><strong>$ 6.195</strong><s>$ 8.300</s><b class="off">25% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2P9RxC4" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-MMCL" aria-label="Copiar código DHM70J-MMCL"><span>Código</span>DHM70J-MMCL</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/2icde3v" target="_blank" rel="sponsored noopener"><img src="img/p35.webp" alt="Armario Desarmable Portátil Con Forro Doble Organizador" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.6</p>
+    <h3>Armario Desarmable Portátil Con Forro Doble Organizador</h3>
+    <p class="pr"><strong>$ 42.999</strong><s>$ 100.000</s><b class="off">57% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/2icde3v" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-EM99" aria-label="Copiar código DHM70J-EM99"><span>Código</span>DHM70J-EM99</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="ph" href="https://meli.la/1ZNaKSU" target="_blank" rel="sponsored noopener"><img src="img/p36.webp" alt="Linterna Minero Cabeza Vincha Led Cob Punta Iman Recargable" loading="lazy" width="500" height="500"></a>
+  <div class="bd">
+    <p class="meta">+10 mil vendidos · ★ 4.6</p>
+    <h3>Linterna Minero Cabeza Vincha Led Cob Punta Iman Recargable</h3>
+    <p class="pr"><strong>$ 5.999</strong><s>$ 20.000</s><b class="off">70% OFF</b></p>
+    <div class="act">
+      <a class="btn" href="https://meli.la/1ZNaKSU" target="_blank" rel="sponsored noopener">Ver precio de hoy</a>
+      <button class="code" data-code="DHM70J-G84B" aria-label="Copiar código DHM70J-G84B"><span>Código</span>DHM70J-G84B</button>
+    </div>
+  </div>
+</article></div>
+  </div>
+</section>
+<section class="how"><div class="wrap">
+  <h2>¿Viste el video y no podés tocar el link?</h2>
+  <div class="steps">
+    <p><b>Copiá el código</b> que aparece al final del video o en la tarjeta del producto.</p>
+    <p><b>Abrí Mercado Libre</b> y pegalo en el buscador, como si buscaras cualquier cosa.</p>
+    <p><b>Te lleva directo</b> al producto. Comprás igual que siempre, al mismo precio.</p>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Links de afiliado: si comprás, recibimos una comisión sin costo extra para vos.</p><p>Precios del 22/11/2026, pueden cambiar. No somos Mercado Libre.</p></div></footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script>
+const t=document.querySelector('.toast');let h;
+document.querySelectorAll('.code').forEach(b=>b.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(b.dataset.code)}catch(e){}
+  t.textContent='Código '+b.dataset.code+' copiado. Pegalo en el buscador de Mercado Libre.';
+  t.classList.add('on');clearTimeout(h);h=setTimeout(()=>t.classList.remove('on'),2600);
+}));
+</script>
+</body>
+</html>
