@@ -136,6 +136,10 @@ main{padding-bottom:60px}
 .ib svg{width:19px;height:19px}
 .code{grid-column:1/-1;font:600 12px ui-monospace,monospace;color:var(--muted);background:none;border:1px dashed var(--line);border-radius:9px;padding:6px 8px;cursor:pointer;text-align:center;transition:border-color .2s,color .2s}
 .code:hover{border-color:var(--accent);color:var(--ink)}
+.cd{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font:700 13px ui-monospace,monospace;color:#3b2600;background:linear-gradient(135deg,var(--gold1),var(--gold2));padding:5px 9px;border-radius:8px}
+.cd::before{content:'⏱'}
+.flashbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-8px 0 22px;padding:14px 18px;border-radius:16px;background:linear-gradient(135deg,#1a1408,#2a1f08);color:var(--gold1);font-weight:600}
+.flashbar b{font:800 22px ui-monospace,monospace;color:#fff}
 .empty{text-align:center;padding:80px 0;color:var(--muted)}
 .empty b{display:block;font:800 30px "Bricolage Grotesque";color:var(--ink);margin-bottom:8px}
 
@@ -236,7 +240,7 @@ function card(x,i){
   <button class="fav" data-s="${x.s}" aria-pressed="${favs.has(x.s)}" aria-label="Guardar en favoritos">${heart}</button>
   <div class="bd"><p class="meta">${vend(x.v)}${x.r?` <span class="st">★ ${x.r}</span>`:''}</p><h3>${x.t}</h3>
    <p class="pr"><strong>${fmt(x.p)}</strong>${x.pa?`<s>${fmt(x.pa)}</s>`:''}</p>
-   ${x.pa?`<span class="save">Ahorrás ${fmt(x.pa-x.p)}</span>`:''}
+   ${x.pa?`<span class="save">Ahorrás ${fmt(x.pa-x.p)}</span>`:''}${gold&&x.fin?`<span class="cd" data-fin="${x.fin}">--:--:--</span>`:''}
    <div class="act"><a class="btn" href="go/${x.s}.html" target="_blank" rel="sponsored noopener">${ML}Ver oferta</a>
     <button class="ib wa" data-wa="${x.s}" aria-label="Compartir por WhatsApp">${wa}</button>
     ${x.c?`<button class="code" data-code="${x.c}" title="Copiar código para el buscador">${x.c}</button>`:''}</div></div></article>`}
@@ -248,13 +252,13 @@ function render(){
   if(!L.length) h=`<div class="empty"><b>${st.fav?'Todavía no guardaste favoritos':'No encontramos eso'}</b>${st.fav?'Tocá el ♥ de un producto para guardarlo.':'Probá con otra palabra o mirá todas las categorías.'}</div>`;
   else if(S||q||st.fav){L=S?[...L].sort(S):L;h=`<section class="sec"><div class="grid">${L.map(card).join('')}</div></section>`}
   else for(const g of GR){const xs=L.filter(x=>x.g===g.id);if(!xs.length)continue;
-    h+=`<section class="sec${g.id==='relampago'?' flash':''}" id="s-${g.id}"><h2><span class="em">${g.e}</span>${g.t}<small>${xs.length} productos</small></h2><div class="grid">${xs.map(card).join('')}</div></section>`}
+    h+=`<section class="sec${g.id==='relampago'?' flash':''}" id="s-${g.id}"><h2><span class="em">${g.e}</span>${g.t}<small>${xs.length} productos</small></h2>${g.id==='relampago'?`<div class="flashbar">⚡ Duran pocas horas y se terminan cuando se agota el stock. Termina en <b class="cd-all">--:--:--</b></div>`:''}<div class="grid">${xs.map(card).join('')}</div></section>`}
   $('#count').textContent=`${L.length} ${L.length===1?'producto':'productos'}${q?` para “${st.q.trim()}”`:''}`;
   $('#list').innerHTML=h; observe();
 }
 function go(){document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches?document.startViewTransition(render):render()}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -40px'});
-function observe(){document.querySelectorAll('.card:not(.in)').forEach(c=>io.observe(c))}
+function observe(){document.querySelectorAll('.card:not(.in)').forEach(c=>io.observe(c));if(typeof tickCD==='function')tickCD()}
 $('#chips').innerHTML=`<button class="chip" data-g="all" aria-pressed="true">Todo <small>${DATA.length}</small></button>`+GR.map(g=>`<button class="chip${g.id==='relampago'?' gold':''}" data-g="${g.id}" aria-pressed="false">${g.e} ${g.t} <small>${g.n}</small></button>`).join('');
 $('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;st.g=b.dataset.g;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));go();$('#main').scrollIntoView({behavior:'smooth'})});
 let t;$('#q').addEventListener('input',e=>{st.q=e.target.value;clearTimeout(t);t=setTimeout(()=>{go();if(st.q&&scrollY<innerHeight*.6)$('#main').scrollIntoView({behavior:'smooth'})},180)});
@@ -280,7 +284,13 @@ $("#tick").innerHTML=tk+tk;
 // barra y volver arriba
 addEventListener('scroll',()=>{$('#top').classList.toggle('scrolled',scrollY>10);$('#totop').classList.toggle('on',scrollY>900)},{passive:true});
 $('#totop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
-saveFav();render();
+function tickCD(){const now=Date.now();let min=Infinity;
+  document.querySelectorAll('[data-fin]').forEach(el=>{const ms=new Date(el.dataset.fin).getTime()-now;if(ms<min)min=ms;el.textContent=ms>0?hms(ms):'Terminó'});
+  document.querySelectorAll('.cd-all').forEach(el=>el.textContent=min>0&&min<Infinity?hms(min):'Terminó')}
+const hms=ms=>{const s=Math.floor(ms/1000);return [s/3600,s%3600/60,s%60].map(n=>String(Math.floor(n)).padStart(2,'0')).join(':')};
+setInterval(tickCD,1000);
+DATA.splice(0,DATA.length,...DATA.filter(x=>!x.fin||new Date(x.fin).getTime()>Date.now()));
+saveFav();render();tickCD();
 if(location.hash.startsWith('#s-')){const g=location.hash.slice(3);document.querySelector(`.chip[data-g="${g}"]`)?.click()}
 </script>
 </body>
