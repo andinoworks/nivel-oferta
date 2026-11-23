@@ -4,297 +4,291 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nivel Oferta</title>
-<meta name="description" content="Los productos de nuestros videos, con link directo a Mercado Libre, descuento y código para buscarlos.">
-<meta property="og:title" content="Nivel Oferta — lo que sale en los videos">
-<meta property="og:description" content="Hasta __MAXOFF__% OFF en productos que se venden de a miles. Link directo a Mercado Libre.">
+<meta name="description" content="Los productos de nuestros videos con descuento real, link directo a Mercado Libre y código para buscarlos.">
+<meta property="og:title" content="Nivel Oferta — hasta __MAXOFF__% OFF">
+<meta property="og:description" content="Lo más vendido de Mercado Libre, con descuento de verdad. Link directo.">
 <meta property="og:image" content="img/p00.webp">
-<meta name="theme-color" content="#120f0c">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4d2e'/%3E%3Cpath d='M9 22V10l14 12V10' stroke='%23fff' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23111'/%3E%3Cpath d='M10 22V10l12 12V10' stroke='%23fff' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<!-- v2 (22-nov): referencias Nike (skill "referencias") + ui-ux-pro-max (Rubik/Nunito Sans, SVG, stagger) + taste/impeccable. v1 en /v1/ -->
 <style>
-:root{--bg:#f6f2ea;--surface:#fff;--ink:#16130f;--muted:#6b6358;--line:#e7dfd1;--accent:#ff4d2e;--accent2:#ff8a3d;--save:#00a650;--save-bg:#e3f7ec;
---gold1:#ffe27a;--gold2:#f5b400;--gold3:#c98a00;--chip:#efe8dc;--r:18px;--ease:cubic-bezier(.23,1,.32,1);--spring:cubic-bezier(.34,1.56,.64,1);--gut:clamp(16px,4vw,48px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#100d0a;--surface:#1b1713;--ink:#f4eee4;--muted:#a69d90;--line:#2c261f;--chip:#231e18;--save-bg:#0f2c1d}}
-:root[data-theme="dark"]{--bg:#100d0a;--surface:#1b1713;--ink:#f4eee4;--muted:#a69d90;--line:#2c261f;--chip:#231e18;--save-bg:#0f2c1d}
+:root{--canvas:#fff;--cloud:#f5f5f5;--ink:#111;--charcoal:#39393b;--mute:#707072;--hair:#e5e5e5;--hair2:#cacacb;
+--sale:#d30005;--save:#007d48;--gold1:#fff1a8;--gold2:#ffd23a;--gold3:#c98a00;--focus:#1151ff;
+--r:20px;--pill:999px;--ease:cubic-bezier(.23,1,.32,1);--spring:cubic-bezier(.34,1.56,.64,1);--gut:clamp(16px,3.2vw,40px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--canvas:#0c0c0c;--cloud:#1a1a1a;--ink:#f5f5f5;--charcoal:#d4d4d6;--mute:#9e9ea0;--hair:#262626;--hair2:#3a3a3a;--save:#1eaa52}}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.5 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}button{font:inherit;color:inherit}
-img{display:block}
-.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gut)}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:99}
-
-/* ---------- barra superior ---------- */
-.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-.top.scrolled{border-color:var(--line);box-shadow:0 8px 30px -20px rgba(0,0,0,.4)}
-.top .wrap{display:flex;align-items:center;gap:16px;height:68px}
-.mark{font:800 22px/1 "Bricolage Grotesque";letter-spacing:-.03em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
-.mark b{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:17px}
-.mark i{font-style:normal;color:var(--accent)}
-.search{flex:1;max-width:560px;position:relative}
-.search input{width:100%;height:46px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);padding:0 44px 0 44px;font:500 15px "Instrument Sans";color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
-.search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
-.search svg{position:absolute;left:14px;top:13px;width:20px;height:20px;color:var(--muted)}
-.search kbd{position:absolute;right:12px;top:12px;font:600 12px ui-monospace,monospace;border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--muted)}
-.trust{display:flex;align-items:center;gap:10px;margin-left:auto;font-size:13px;line-height:1.15;color:var(--muted);white-space:nowrap}
-.trust img{width:38px;height:38px}
-.trust b{display:block;color:var(--ink);font-size:14px}
-
-/* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;background:#120f0c;color:#f7f1e6;isolation:isolate}
-.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:-1;animation:float 14s ease-in-out infinite alternate}
-.b1{width:520px;height:520px;background:#ff4d2e;top:-180px;left:-120px}
-.b2{width:460px;height:460px;background:#f5b400;bottom:-220px;left:35%;animation-delay:-5s}
-.b3{width:380px;height:380px;background:#8f3bff;top:-120px;right:-100px;opacity:.35;animation-delay:-9s}
-@keyframes float{to{transform:translate(60px,40px) scale(1.12)}}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;min-height:min(780px,calc(100svh - 68px));padding-top:56px;padding-bottom:56px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 13px "Instrument Sans";letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 12px;border-radius:99px}
-.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#3dff8b;box-shadow:0 0 0 0 #3dff8b;animation:ping 1.8s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 10px rgba(61,255,139,0)}100%{box-shadow:0 0 0 0 rgba(61,255,139,0)}}
-.hero h1{margin-top:22px;font:800 clamp(42px,6.6vw,92px)/.95 "Bricolage Grotesque";letter-spacing:-.04em;text-wrap:balance}
-.hero h1 .hl{background:linear-gradient(90deg,#ff4d2e,#ffb13d,#ff4d2e);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
-@keyframes sheen{to{background-position:-200% 0}}
-.hero .lead{margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:#cfc5b6;max-width:40ch}
-.stats{display:grid;grid-template-columns:repeat(3,auto);gap:30px;margin-top:34px;justify-content:start}
-.stats b{display:block;font:800 clamp(28px,3vw,40px)/1 "Bricolage Grotesque";letter-spacing:-.03em}
-.stats .g{color:#3dff8b}.stats .o{color:#ffb13d}
-.stats span{font-size:13px;color:#a89e8f}
-.hero .ctas{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 20px;border-radius:12px;border:0;cursor:pointer;transition:transform .18s var(--ease),box-shadow .25s var(--ease),filter .2s;box-shadow:0 10px 24px -12px var(--accent)}
-.btn:hover{transform:translateY(-1px);box-shadow:0 16px 30px -12px var(--accent)}
-.btn:active{transform:scale(.96)}
-.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:none;color:#f7f1e6}
-.marquee{min-width:0;overflow:visible;display:grid;gap:14px;transform:rotate(-6deg);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.row{display:flex;gap:14px;width:max-content;animation:scroll 40s linear infinite}
-.row.rev{animation-direction:reverse;animation-duration:46s}
-.marquee:hover .row{animation-play-state:paused}
-.row img{width:150px;height:150px;object-fit:contain;background:#fff;border-radius:20px;padding:14px;flex:none;box-shadow:0 18px 40px -24px rgba(0,0,0,.8)}
-@keyframes scroll{to{transform:translateX(-50%)}}
-.ticker{background:var(--accent);color:#fff;overflow:hidden;white-space:nowrap;font:700 15px "Bricolage Grotesque";letter-spacing:.01em}
-.ticker div{display:inline-flex;gap:40px;padding:11px 0;animation:scroll 50s linear infinite}
-.ticker span::before{content:"✦";margin-right:40px;opacity:.6}
-
-/* ---------- filtros ---------- */
-.filters{position:sticky;top:68px;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.filters .wrap{display:flex;gap:12px;align-items:center;padding-top:12px;padding-bottom:12px}
-.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;mask-image:linear-gradient(90deg,#000 92%,transparent);padding:2px}
-.chip{flex:none;border:1.5px solid var(--line);background:var(--surface);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s,transform .15s var(--ease)}
-.chip:hover{border-color:var(--ink)}
-.chip:active{transform:scale(.95)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip small{opacity:.55;margin-left:4px;font-weight:500}
-.chip.gold[aria-pressed="false"]{background:linear-gradient(135deg,var(--gold1),var(--gold2));border-color:var(--gold2);color:#3b2600}
-.ctrl{display:flex;gap:8px;align-items:center}
-select,.tog{height:40px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 14px "Instrument Sans";padding:0 12px;cursor:pointer}
-.tog[aria-pressed="true"]{background:#ffe9ec;border-color:#ff5a76;color:#d11a3d}
-.count{font-size:14px;color:var(--muted);padding:22px 0 0}
-
-/* ---------- secciones y tarjetas ---------- */
-main{padding-bottom:60px}
-.sec{padding:44px 0 8px}
-.sec h2{font:800 clamp(28px,3.4vw,44px)/1.02 "Bricolage Grotesque";letter-spacing:-.035em;display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.sec h2 .em{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--chip);font-size:28px}
-.sec h2 small{font:500 15px "Instrument Sans";color:var(--muted);letter-spacing:0;margin-left:auto}
-.flash h2{color:var(--ink)}
-.flash .em{background:linear-gradient(135deg,var(--gold1),var(--gold2))!important}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:18px}
-.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s}
-.card.in{animation:rise .7s var(--ease) both;animation-delay:calc(var(--i,0)*55ms)}
-@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.98);filter:blur(6px)}}
-@media (hover:hover){.card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -28px rgba(40,20,0,.45);border-color:transparent}.card:hover .ph img{transform:scale(1.06) rotate(-1deg)}}
-.ph{position:relative;display:block;background:#fff;aspect-ratio:1;overflow:hidden}
-.ph img{width:100%;height:100%;object-fit:contain;padding:10%;transition:transform .6s var(--ease)}
-.off{position:absolute;left:12px;top:12px;background:var(--save);color:#fff;font:800 20px/1 "Bricolage Grotesque";letter-spacing:-.02em;padding:9px 11px 8px;border-radius:12px;box-shadow:0 8px 18px -8px rgba(0,120,60,.7);transform-origin:left top}
-.off.big{font-size:26px;background:linear-gradient(135deg,#ff2d55,#ff4d2e)}
-.card.in .off{animation:pop .6s var(--spring) both;animation-delay:calc(var(--i,0)*55ms + 250ms)}
-@keyframes pop{from{transform:scale(.3) rotate(-12deg);opacity:0}}
-.gold .off,.off.gold{background:linear-gradient(135deg,var(--gold1),var(--gold2) 55%,var(--gold3));color:#3b2600;box-shadow:0 8px 20px -8px rgba(201,138,0,.9);overflow:hidden}
-.off.gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.75) 50%,transparent 70%);transform:translateX(-100%);animation:shine 2.6s ease-in-out infinite}
-@keyframes shine{60%,100%{transform:translateX(100%)}}
-.tag{position:absolute;left:12px;bottom:12px;background:#ff7733;color:#fff;font:700 11px "Instrument Sans";letter-spacing:.05em;padding:5px 8px;border-radius:7px}
-.tag.fl{background:#16130f;color:var(--gold1)}
-.fav{position:absolute;right:10px;top:10px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px -6px rgba(0,0,0,.35);transition:transform .2s var(--spring)}
-.fav:active{transform:scale(.85)}
-.fav svg{width:20px;height:20px;fill:none;stroke:#16130f;stroke-width:2;transition:fill .2s,stroke .2s}
-.fav[aria-pressed="true"] svg{fill:#ff2d55;stroke:#ff2d55;animation:beat .45s var(--spring)}
-@keyframes beat{40%{transform:scale(1.35)}}
-.bd{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.meta{font-size:13px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
-.meta .st{color:#f5a300}
-.card h3{font-size:15px;font-weight:500;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:40px}
-.pr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:4px}
-.pr strong{font:800 25px/1 "Bricolage Grotesque";letter-spacing:-.03em}
-.pr s{font-size:14px;color:var(--muted)}
-.save{align-self:flex-start;background:var(--save-bg);color:var(--save);font:700 13px "Instrument Sans";padding:5px 9px;border-radius:8px}
-.gold .save{background:#fff3c4;color:#8a5a00}
-.act{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:auto;padding-top:12px}
-.act .btn{font-size:14px;padding:11px 12px;border-radius:11px;box-shadow:none}
-.act .btn img{width:20px;height:20px;background:#fff;border-radius:50%;padding:1px}
-.ib{width:42px;height:42px;border-radius:11px;border:1.5px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;transition:transform .15s var(--ease),border-color .2s}
-.ib:hover{border-color:var(--ink)}.ib:active{transform:scale(.92)}
-.ib svg{width:19px;height:19px}
-.code{grid-column:1/-1;font:600 12px ui-monospace,monospace;color:var(--muted);background:none;border:1px dashed var(--line);border-radius:9px;padding:6px 8px;cursor:pointer;text-align:center;transition:border-color .2s,color .2s}
-.code:hover{border-color:var(--accent);color:var(--ink)}
-.cd{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font:700 13px ui-monospace,monospace;color:#3b2600;background:linear-gradient(135deg,var(--gold1),var(--gold2));padding:5px 9px;border-radius:8px}
-.cd::before{content:'⏱'}
-.flashbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-8px 0 22px;padding:14px 18px;border-radius:16px;background:linear-gradient(135deg,#1a1408,#2a1f08);color:var(--gold1);font-weight:600}
+html{scroll-behavior:smooth;scroll-padding-top:140px}
+body{background:var(--canvas);color:var(--ink);font:400 16px/1.5 "Nunito Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}img{display:block}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--canvas);padding:8px 14px;z-index:99;border-radius:var(--pill)}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--canvas) 90%,transparent);backdrop-filter:blur(16px) saturate(1.5)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 21px/1 Rubik;letter-spacing:-.02em;white-space:nowrap}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--canvas);font-size:16px}
+.search{flex:1;max-width:620px;margin:0 auto;position:relative}
+.search input{width:100%;height:48px;border:0;border-radius:var(--pill);background:var(--cloud);padding:0 48px;font:600 16px "Nunito Sans";color:var(--ink);outline:none;transition:box-shadow .2s,background .2s}
+.search input:focus{background:var(--canvas);box-shadow:0 0 0 2px var(--ink)}
+.search .i{position:absolute;left:16px;top:14px;color:var(--mute)}
+.search kbd{position:absolute;right:14px;top:13px;font:600 12px ui-monospace,monospace;border:1px solid var(--hair2);border-radius:6px;padding:1px 7px;color:var(--mute)}
+.trust{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;line-height:1.2;color:var(--mute);white-space:nowrap}
+.trust img{width:36px;height:36px}.trust b{display:block;color:var(--ink);font-size:14px}
+.hero{padding:28px 0 8px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px;align-items:stretch}
+.hero h1{font:900 clamp(52px,8.2vw,124px)/.88 Rubik;text-transform:uppercase;letter-spacing:-.035em}
+.hero h1 span{display:block}.hero h1 .r{color:var(--sale)}
+.hero-copy{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:18px 0}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--charcoal);max-width:38ch}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stats b{display:block;font:800 clamp(28px,3vw,40px)/1 Rubik;letter-spacing:-.02em}
+.stats span{font-size:13px;color:var(--mute)}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:var(--pill);border:0;background:var(--ink);color:var(--canvas);font:600 16px "Nunito Sans";text-decoration:none;transition:transform .18s var(--ease),opacity .2s}
+.btn:hover{opacity:.86}.btn:active{transform:scale(.96)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--hair2)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink);opacity:1}
+.feature{position:relative;border-radius:28px;background:var(--cloud);overflow:hidden;min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;isolation:isolate}
+.feature>img{position:absolute;left:8%;top:6%;width:84%;height:62%;object-fit:contain;mix-blend-mode:multiply;transition:transform .8s var(--ease);z-index:-1}
+.feature:hover>img{transform:scale(1.05) rotate(-1.5deg)}
+.feature .tagline{position:absolute;top:18px;left:18px;display:flex;gap:8px;align-items:center}
+.feature .info{padding:22px}
+.feature .nm{font:600 15px "Nunito Sans";color:var(--charcoal);max-width:44ch}
+.feature .pr{display:flex;align-items:baseline;gap:12px;margin-top:6px}
+.feature .pr b{font:800 40px/1 Rubik;letter-spacing:-.02em}
+.feature .pr s{color:var(--mute)}
+.chipb{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:var(--pill);font:700 13px Rubik;letter-spacing:.02em}
+.chipb.sale{background:var(--sale);color:#fff}
+.chipb.gold{background:linear-gradient(135deg,var(--gold1),var(--gold2) 55%,var(--gold3));color:#3b2600;position:relative;overflow:hidden}
+.chipb.dark{background:var(--ink);color:var(--canvas)}
+.chipb.gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.8) 50%,transparent 70%);transform:translateX(-120%);animation:shine 2.8s ease-in-out infinite}
+@keyframes shine{60%,100%{transform:translateX(120%)}}
+.strip{padding:44px 0 6px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}
+.sec-head h2{font:800 clamp(26px,3vw,38px)/1.05 Rubik;letter-spacing:-.025em;text-transform:uppercase}
+.sec-head p{color:var(--mute);font-size:14px}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(210px,22vw,270px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.rail>*{scroll-snap-align:start}
+.filters{position:sticky;top:72px;z-index:30;background:color-mix(in srgb,var(--canvas) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair)}
+.filters .wrap{display:flex;gap:12px;align-items:center;padding-top:10px;padding-bottom:10px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;padding:2px;mask-image:linear-gradient(90deg,#000 93%,transparent)}
+.chip{flex:none;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 16px;border-radius:var(--pill);border:0;background:var(--cloud);font:600 14px "Nunito Sans";white-space:nowrap;transition:background .2s,color .2s,transform .15s var(--ease)}
+.chip:hover{background:var(--hair)}.chip:active{transform:scale(.95)}
+.chip svg.i{width:17px;height:17px}
+.chip small{opacity:.55;font-weight:600}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--canvas)}
+.chip.gold[aria-pressed=false]{background:linear-gradient(135deg,var(--gold1),var(--gold2));color:#3b2600}
+.ctrl{display:flex;gap:8px}
+select,.tog{height:40px;border-radius:var(--pill);border:0;background:var(--cloud);color:var(--ink);font:600 14px "Nunito Sans";padding:0 16px}
+.tog{display:inline-flex;align-items:center;gap:6px}
+.tog[aria-pressed=true]{background:var(--sale);color:#fff}
+.count{font-size:14px;color:var(--mute);padding:22px 0 0}
+main{padding-bottom:40px}
+.sec{padding:40px 0 4px}
+.sec h2{display:flex;align-items:center;gap:12px;font:800 clamp(24px,2.8vw,34px)/1.05 Rubik;letter-spacing:-.025em;text-transform:uppercase;margin-bottom:18px}
+.sec h2 .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--cloud)}
+.sec.flash h2 .ic{background:linear-gradient(135deg,var(--gold1),var(--gold2));color:#3b2600}
+.sec h2 small{margin-left:auto;font:600 14px "Nunito Sans";color:var(--mute);text-transform:none;letter-spacing:0}
+.flashbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-4px 0 18px;padding:14px 18px;border-radius:16px;background:#141008;color:var(--gold1);font-weight:700}
 .flashbar b{font:800 22px ui-monospace,monospace;color:#fff}
-.empty{text-align:center;padding:80px 0;color:var(--muted)}
-.empty b{display:block;font:800 30px "Bricolage Grotesque";color:var(--ink);margin-bottom:8px}
-
-/* ---------- cómo funciona / pie ---------- */
-.how{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 0}
-.how h2{font:800 clamp(30px,3.6vw,48px)/1.02 "Bricolage Grotesque";letter-spacing:-.035em;max-width:20ch}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.steps div{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--bg)}
-.steps i{font:800 40px/1 "Bricolage Grotesque";font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.steps b{display:block;margin:12px 0 6px;font-size:18px}
-.steps p{color:var(--muted)}
-.mlbox{display:flex;gap:18px;align-items:center;margin-top:34px;padding:20px;border-radius:var(--r);background:#fff159;color:#2d3277}
-.mlbox img{width:56px;height:56px;flex:none}
-.mlbox b{display:block;font-size:17px}
-footer{padding:36px 0 60px;font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px 16px}
+.card{position:relative;display:flex;flex-direction:column;gap:10px}
+.card.in{animation:rise .5s var(--spring) both;animation-delay:calc(var(--i,0)*55ms)}
+@keyframes rise{from{opacity:0;transform:translateY(16px) scale(.94)}}
+.ph{position:relative;display:block;aspect-ratio:1;border-radius:var(--r);background:#f5f5f5;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:contain;padding:12%;mix-blend-mode:multiply;transition:transform .55s var(--ease)}
+@media (hover:hover){.card:hover .ph img{transform:scale(1.07)}}
+.badges{position:absolute;left:12px;top:12px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.off{font:800 22px/1 Rubik;letter-spacing:-.02em;padding:8px 11px;border-radius:12px;background:var(--sale);color:#fff}
+.gold .off{background:linear-gradient(135deg,var(--gold1),var(--gold2) 55%,var(--gold3));color:#3b2600}
+.card.in .off{animation:pop .55s var(--spring) both;animation-delay:calc(var(--i,0)*55ms + 200ms)}
+@keyframes pop{from{transform:scale(.4) rotate(-10deg);opacity:0}}
+.fav{position:absolute;right:10px;top:10px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.12);transition:transform .2s var(--spring)}
+.fav:active{transform:scale(.85)}
+.fav svg{width:20px;height:20px;fill:none;stroke:#111;stroke-width:2}
+.fav[aria-pressed=true] svg{fill:var(--sale);stroke:var(--sale);animation:beat .45s var(--spring)}
+@keyframes beat{40%{transform:scale(1.35)}}
+.meta{font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.meta .st{color:var(--charcoal);font-weight:700}
+.card h3{font:600 15px/1.35 "Nunito Sans";color:var(--charcoal);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:40px}
+.pr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.pr strong{font:800 24px/1 Rubik;letter-spacing:-.02em}
+.pr s{font-size:14px;color:var(--mute)}
+.save{font:700 14px "Nunito Sans";color:var(--save)}
+.cd{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font:700 13px ui-monospace,monospace;color:#3b2600;background:linear-gradient(135deg,var(--gold1),var(--gold2));padding:5px 10px;border-radius:var(--pill)}
+.act{display:grid;grid-template-columns:1fr 44px;gap:8px;margin-top:auto}
+.act .btn{height:44px;font-size:15px;padding:0 14px}
+.act .sm{display:none}.act .btn img{width:20px;height:20px;background:#fff;border-radius:50%;padding:1px}
+.ib{width:44px;height:44px;border-radius:50%;border:0;background:var(--cloud);display:grid;place-items:center;transition:transform .15s var(--ease),background .2s}
+.ib:hover{background:var(--hair)}.ib:active{transform:scale(.9)}
+.code{grid-column:1/-1;height:36px;border-radius:var(--pill);border:1.5px dashed var(--hair2);background:transparent;font:700 13px ui-monospace,monospace;color:var(--charcoal);transition:border-color .2s}
+.code:hover{border-color:var(--ink)}
+.code span{font:600 11px "Nunito Sans";color:var(--mute);margin-right:6px;text-transform:uppercase;letter-spacing:.06em}
+.empty{text-align:center;padding:80px 0;color:var(--mute)}
+.empty b{display:block;font:800 30px Rubik;color:var(--ink);margin-bottom:8px;text-transform:uppercase}
+.how{margin-top:48px;background:#111;color:#fff}
+.how .wrap{padding-top:64px;padding-bottom:64px}
+.how h2{font:900 clamp(34px,4.6vw,64px)/.92 Rubik;text-transform:uppercase;letter-spacing:-.03em;max-width:16ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.steps div{border-radius:var(--r);padding:24px;background:rgba(255,255,255,.07)}
+.steps i{font:900 44px/1 Rubik;font-style:normal;color:var(--gold2)}
+.steps b{display:block;margin:12px 0 6px;font:700 19px Rubik}
+.steps p{opacity:.75}
+.mlbox{display:flex;gap:16px;align-items:center;margin-top:28px;padding:18px 20px;border-radius:var(--r);background:#fff159;color:#2d3277}
+.mlbox img{width:52px;height:52px;flex:none}.mlbox b{display:block;font-size:17px}
+footer{padding:32px 0 56px;font-size:14px;color:var(--mute)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.totop{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);cursor:pointer;display:grid;place-items:center;opacity:0;transform:translateY(16px) scale(.8);transition:opacity .3s,transform .4s var(--spring);z-index:50}
+footer a{font-weight:700}
+.totop{position:fixed;right:18px;bottom:18px;width:52px;height:52px;border-radius:50%;border:0;background:var(--ink);color:var(--canvas);display:grid;place-items:center;opacity:0;transform:translateY(16px) scale(.8);transition:opacity .3s,transform .4s var(--spring);z-index:50}
 .totop.on{opacity:1;transform:none}
-.toast{position:fixed;left:50%;bottom:24px;translate:-50% 0;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;opacity:0;transform:translateY(12px) scale(.96);transition:opacity .25s,transform .35s var(--spring);pointer-events:none;z-index:60;max-width:calc(100vw - 32px)}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 0;background:var(--ink);color:var(--canvas);padding:12px 20px;border-radius:var(--pill);font-weight:700;font-size:14px;opacity:0;transform:translateY(12px) scale(.96);transition:opacity .25s,transform .35s var(--spring);pointer-events:none;z-index:60;max-width:calc(100vw - 32px);text-align:center}
 .toast.on{opacity:1;transform:none}
-[data-enter]>*{animation:up .9s var(--ease) both;animation-delay:calc(var(--d,0)*90ms)}
-@keyframes up{from{opacity:0;transform:translateY(22px);filter:blur(8px)}}
-::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-@media (max-width:980px){.trust span{display:none}}
-@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr);min-height:auto;padding-top:40px}.marquee{transform:rotate(-4deg);margin:10px -20px 0}.row img{width:110px;height:110px}.steps{grid-template-columns:1fr}}
-@media (max-width:640px){.top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px}.search{order:3;flex-basis:100%;max-width:none}.search kbd{display:none}.filters{top:116px}html{scroll-padding-top:200px}
+[data-enter]>*,[data-enter].feature{animation:up .8s var(--ease) both;animation-delay:calc(var(--d,0)*80ms)}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:1000px){.trust span{display:none}}
+@media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.feature{min-height:380px}.steps{grid-template-columns:1fr}}
+@media (max-width:640px){.top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px}.search{order:3;flex-basis:100%}.search kbd{display:none}.filters{top:122px}html{scroll-padding-top:210px}
 .filters .wrap{flex-direction:column;align-items:stretch;gap:8px}.ctrl select{flex:1}
-.grid{grid-template-columns:1fr 1fr;gap:10px}.bd{padding:12px}.pr strong{font-size:20px}.off{font-size:16px;padding:7px 8px 6px;left:8px;top:8px}.off.big{font-size:19px}
-.act .ib.wa{display:none}.act{grid-template-columns:1fr}.sec h2{font-size:26px}.sec h2 small{display:none}.sec h2 .em{width:42px;height:42px;font-size:22px}.hero h1{font-size:44px}.fav{width:34px;height:34px;right:6px;top:6px}.stats{gap:18px}}
+.grid{grid-template-columns:1fr 1fr;gap:22px 10px}.pr strong{font-size:20px}.off{font-size:17px;padding:6px 8px}.act{grid-template-columns:1fr}.act .ib.wa{display:none}.fav{width:40px;height:40px}.act .btn{font-size:14px}.act .lg{display:none}.act .sm{display:inline}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="top" id="top"><div class="wrap">
-  <a class="mark" href="#"><b>N</b><span>nivel<i>:</i> oferta</span></a>
-  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="q" type="search" placeholder="Buscar: ventilador, termo, freidora…" autocomplete="off" aria-label="Buscar productos"><kbd>/</kbd></label>
+  <a class="logo" href="#"><b>N</b>nivel oferta</a>
+  <label class="search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Buscar ventilador, termo, freidora…" autocomplete="off" aria-label="Buscar productos"><kbd>/</kbd></label>
   <div class="trust"><img src="img/ml.svg" alt="Mercado Libre"><span><b>Comprás en Mercado Libre</b>Compra Protegida y envío de ML</span></div>
 </div></header>
 
-<section class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-<div class="wrap">
-  <div data-enter>
-    <span class="eyebrow" style="--d:0"><span class="dot"></span>Precios revisados el __FECHA__</span>
-    <h1 style="--d:1">Lo que sale en los videos, <span class="hl">con descuento de verdad.</span></h1>
-    <p class="lead" style="--d:2">Elegimos lo más vendido de Mercado Libre para cada meme. Tocás, vas directo al producto y pagás en Mercado Libre como siempre.</p>
-    <div class="stats" style="--d:3">
-      <div><b class="o" data-count="__MAXOFF__" data-suf="%">0%</b><span>de descuento máximo</span></div>
-      <div><b class="g" data-count="__AHORRO__" data-pre="$ ">$ 0</b><span>de ahorro sumando todo</span></div>
-      <div><b data-count="__N__">0</b><span>productos elegidos</span></div>
+<section class="hero"><div class="wrap hero-grid">
+  <div class="hero-copy" data-enter>
+    <h1 style="--d:0"><span>Lo que sale</span><span>en los videos,</span><span class="r">más barato.</span></h1>
+    <p class="lead" style="--d:1">Elegimos lo más vendido de Mercado Libre para cada meme. Tocás y vas directo al producto: pagás en Mercado Libre, con su envío y su devolución.</p>
+    <div class="stats" style="--d:2">
+      <div><b data-count="__MAXOFF__" data-suf="%">0%</b><span>descuento máximo</span></div>
+      <div><b data-count="__AHORRO__" data-pre="$ ">$ 0</b><span>ahorro sumando todo</span></div>
+      <div><b data-count="__N__">0</b><span>productos</span></div>
     </div>
-    <div class="ctas" style="--d:4"><a class="btn" href="#main">Ver las ofertas ↓</a><button class="btn ghost" id="vermayor">Ordenar por mayor descuento</button></div>
+    <div class="cta-row" style="--d:3"><a class="btn" href="#main">Ver ofertas</a><button class="btn ghost" id="vermayor">Mayor descuento primero</button></div>
   </div>
-  <div class="marquee" aria-hidden="true"><div class="row">__MARQ1____MARQ1__</div><div class="row rev">__MARQ2____MARQ2__</div></div>
+  <a class="feature" id="feature" href="#" target="_blank" rel="sponsored noopener" data-enter style="--d:2"></a>
 </div></section>
-<div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+
+<section class="strip"><div class="wrap">
+  <div class="sec-head"><h2>Top descuentos de hoy</h2><p>Deslizá →</p></div>
+  <div class="rail" id="rail"></div>
+</div></section>
 
 <nav class="filters" aria-label="Filtros"><div class="wrap">
   <div class="chips" id="chips"></div>
   <div class="ctrl">
     <select id="sort" aria-label="Ordenar"><option value="rel">Destacados</option><option value="off">Mayor descuento</option><option value="save">Mayor ahorro en $</option><option value="v">Más vendidos</option><option value="p">Menor precio</option></select>
-    <button class="tog" id="favs" aria-pressed="false" title="Ver solo favoritos">♥ <span id="nfav">0</span></button>
+    <button class="tog" id="favs" aria-pressed="false" aria-label="Ver solo favoritos"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5c-2.2 4.6-9.2 9-9.2 9Z"/></svg><span id="nfav">0</span></button>
   </div>
 </div></nav>
 
 <main id="main"><div class="wrap"><p class="count" id="count" aria-live="polite"></p><div id="list"></div></div></main>
 
 <section class="how"><div class="wrap">
-  <h2>¿Viste el video y el link no se puede tocar?</h2>
+  <h2>¿El link del video no se puede tocar?</h2>
   <div class="steps">
-    <div><i>01</i><b>Copiá el código</b><p>Está al final del video y en cada tarjeta, abajo del botón.</p></div>
-    <div><i>02</i><b>Pegalo en Mercado Libre</b><p>En el buscador de la app, como si buscaras cualquier cosa.</p></div>
-    <div><i>03</i><b>Comprás como siempre</b><p>Mismo precio, mismas cuotas, Compra Protegida y devolución de Mercado Libre.</p></div>
+    <div><i>01</i><b>Copiá el código</b><p>Está al final del video y abajo de cada producto.</p></div>
+    <div><i>02</i><b>Pegalo en Mercado Libre</b><p>En el buscador de la app, como cualquier búsqueda.</p></div>
+    <div><i>03</i><b>Comprás como siempre</b><p>Mismo precio, mismas cuotas y Compra Protegida.</p></div>
   </div>
   <div class="mlbox"><img src="img/ml.svg" alt=""><div><b>La compra la hacés en Mercado Libre</b>Nosotros solo te mostramos el producto: el pago, el envío y las devoluciones son de Mercado Libre.</div></div>
 </div></section>
-<footer><div class="wrap"><p>Sitio independiente de afiliados. Si comprás desde un link, recibimos una comisión sin costo extra para vos.</p><p>Precios y descuentos del __FECHA__: pueden cambiar en Mercado Libre.</p></div></footer>
-<button class="totop" id="totop" aria-label="Volver arriba"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<footer><div class="wrap"><p>Sitio independiente de afiliados: si comprás desde un link, recibimos una comisión sin costo extra para vos. <a href="v1/">Versión anterior</a></p><p>Precios del __FECHA__; pueden cambiar en Mercado Libre.</p></div></footer>
+<button class="totop" id="totop" aria-label="Volver arriba"><svg class="i" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 const DATA=__DATA__, GR=__GR__;
-// Contador anónimo (solo suma 1; sin datos de la persona). Lo lee D:/claude/web/afiliados-stats/stats.py
+// Contador anónimo (solo suma 1; sin datos de la persona). Lo lee D:/claude/afiliadoML/web/panel-privado/stats.py
 const NS='nivel-oferta-andw', hit=k=>{try{fetch('https://abacus.jasoncameron.dev/hit/'+NS+'/'+k,{keepalive:true,mode:'no-cors'})}catch(e){}};
 hit('visitas');
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="go/"]');if(a)hit('clic-'+a.getAttribute('href').slice(3,-5))},true);
 const $=s=>document.querySelector(s), fmt=n=>'$ '+Math.round(n).toLocaleString('es-AR');
 const vend=v=>v>=1000?`+${Math.round(v/1000)} mil vendidos`:v?`+${v} vendidos`:'';
+const P={relampago:'<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',calor:'<path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>',mosquitos:'<path d="M12 4v16M8 8l-4-2M16 8l4-2M8 12H3M16 12h5M8 16l-4 2M16 16l4 2"/><ellipse cx="12" cy="12" rx="3" ry="6"/>',
+mate:'<path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/>',wifi:'<path d="M12 20h.01M2 8.8a15 15 0 0 1 20 0M5 12.9a10 10 0 0 1 14 0M8.5 16.4a5 5 0 0 1 7 0"/>',
+asado:'<path d="M4 15h16M6 15l-2 6M18 15l2 6M12 15v6M5 11a7 4 0 0 0 14 0Z"/>',gym:'<path d="M14.4 14.4 9.6 9.6M18.7 21.5l2.8-2.8M2.5 5.3l2.8-2.8M6.4 7.8 7.8 6.4M16.2 17.6l1.4-1.4M3.9 9.3l5.4-5.4M14.7 20.1l5.4-5.4"/>',
+cocina:'<path d="M3 11h18M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8M8 7V3M12 7V3M16 7V3"/>',vacaciones:'<path d="M17.5 21H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9Z"/>',
+cine:'<rect x="2" y="7" width="20" height="15" rx="2"/><path d="m17 2-5 5-5-5"/>',vago:'<path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0ZM4 18v2M20 18v2"/>'};
+const ico=(g,c='i')=>`<svg class="${c}" viewBox="0 0 24 24" aria-hidden="true">${P[g]||P.relampago}</svg>`;
 let st={g:'all',q:'',sort:'rel',fav:false};
 let favs=new Set();try{favs=new Set(JSON.parse(localStorage.getItem('nofav')||'[]'))}catch(e){}
 const saveFav=()=>{try{localStorage.setItem('nofav',JSON.stringify([...favs]))}catch(e){};$('#nfav').textContent=favs.size};
-const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
-const ML='<img src="img/ml.svg" alt="">';
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const heart='<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5c-2.2 4.6-9.2 9-9.2 9Z"/></svg>';
-const wa='<svg viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13 13 0 0 1-5-4.4 5.7 5.7 0 0 1-1.2-3c0-1.4.7-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.5Z"/></svg>';
+const wa='<svg viewBox="0 0 24 24" width="20" height="20" fill="#25d366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13 13 0 0 1-5-4.4 5.7 5.7 0 0 1-1.2-3c0-1.4.7-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.5Z"/></svg>';
 function card(x,i){
-  const gold=x.g==='relampago', big=x.off>=40&&!gold;
+  const gold=x.g==='relampago';
   return `<article class="card${gold?' gold':''}" style="--i:${i%8}">
-  <a class="ph" href="go/${x.s}.html" target="_blank" rel="sponsored noopener"><img src="${x.img}" alt="${x.t.replace(/"/g,'')}" loading="lazy" width="500" height="500">
-   ${x.off?`<span class="off${gold?' gold':big?' big':''}">-${x.off}%</span>`:''}${gold?'<span class="tag fl">⚡ RELÁMPAGO</span>':x.mv||x.v>=50000?'<span class="tag">MÁS VENDIDO</span>':''}</a>
+  <a class="ph" href="go/${x.s}.html" target="_blank" rel="sponsored noopener" aria-label="${x.t.replace(/"/g,'')} en Mercado Libre"><img src="${x.img}" alt="" loading="lazy" width="500" height="500">
+   <span class="badges">${x.off?`<span class="off">-${x.off}%</span>`:''}${gold?'<span class="chipb gold">Relámpago</span>':x.mv||x.v>=50000?'<span class="chipb dark">Más vendido</span>':''}</span></a>
   <button class="fav" data-s="${x.s}" aria-pressed="${favs.has(x.s)}" aria-label="Guardar en favoritos">${heart}</button>
-  <div class="bd"><p class="meta">${vend(x.v)}${x.r?` <span class="st">★ ${x.r}</span>`:''}</p><h3>${x.t}</h3>
-   <p class="pr"><strong>${fmt(x.p)}</strong>${x.pa?`<s>${fmt(x.pa)}</s>`:''}</p>
-   ${x.pa?`<span class="save">Ahorrás ${fmt(x.pa-x.p)}</span>`:''}${gold&&x.fin?`<span class="cd" data-fin="${x.fin}">--:--:--</span>`:''}
-   <div class="act"><a class="btn" href="go/${x.s}.html" target="_blank" rel="sponsored noopener">${ML}Ver oferta</a>
-    <button class="ib wa" data-wa="${x.s}" aria-label="Compartir por WhatsApp">${wa}</button>
-    ${x.c?`<button class="code" data-code="${x.c}" title="Copiar código para el buscador">${x.c}</button>`:''}</div></div></article>`}
+  <p class="meta">${vend(x.v)}${x.r?` · <span class="st">★ ${x.r}</span>`:''}</p>
+  <h3>${x.t}</h3>
+  <p class="pr"><strong>${fmt(x.p)}</strong>${x.pa?`<s>${fmt(x.pa)}</s>`:''}</p>
+  ${x.pa?`<span class="save">Ahorrás ${fmt(x.pa-x.p)}</span>`:''}${gold&&x.fin?`<span class="cd" data-fin="${x.fin}">--:--:--</span>`:''}
+  <div class="act"><a class="btn" href="go/${x.s}.html" target="_blank" rel="sponsored noopener"><img src="img/ml.svg" alt=""><span class="lg">Ver en Mercado Libre</span><span class="sm">Ver oferta</span></a>
+   <button class="ib wa" data-wa="${x.s}" aria-label="Compartir por WhatsApp">${wa}</button>
+   ${x.c?`<button class="code" data-code="${x.c}"><span>Código</span>${x.c}</button>`:''}</div></article>`}
 function render(){
   const q=norm(st.q.trim());
   let L=DATA.filter(x=>(st.g==='all'||x.g===st.g)&&(!q||norm(x.t+' '+x.g).includes(q))&&(!st.fav||favs.has(x.s)));
   const S={off:(a,b)=>b.off-a.off,save:(a,b)=>(b.pa-b.p)-(a.pa-a.p),v:(a,b)=>b.v-a.v,p:(a,b)=>a.p-b.p}[st.sort];
   let h='';
-  if(!L.length) h=`<div class="empty"><b>${st.fav?'Todavía no guardaste favoritos':'No encontramos eso'}</b>${st.fav?'Tocá el ♥ de un producto para guardarlo.':'Probá con otra palabra o mirá todas las categorías.'}</div>`;
+  if(!L.length) h=`<div class="empty"><b>${st.fav?'Sin favoritos todavía':'No encontramos eso'}</b>${st.fav?'Tocá el corazón de un producto para guardarlo.':'Probá con otra palabra o mirá todas las categorías.'}</div>`;
   else if(S||q||st.fav){L=S?[...L].sort(S):L;h=`<section class="sec"><div class="grid">${L.map(card).join('')}</div></section>`}
   else for(const g of GR){const xs=L.filter(x=>x.g===g.id);if(!xs.length)continue;
-    h+=`<section class="sec${g.id==='relampago'?' flash':''}" id="s-${g.id}"><h2><span class="em">${g.e}</span>${g.t}<small>${xs.length} productos</small></h2>${g.id==='relampago'?`<div class="flashbar">⚡ Duran pocas horas y se terminan cuando se agota el stock. Termina en <b class="cd-all">--:--:--</b></div>`:''}<div class="grid">${xs.map(card).join('')}</div></section>`}
+    h+=`<section class="sec${g.id==='relampago'?' flash':''}" id="s-${g.id}"><h2><span class="ic">${ico(g.id)}</span>${g.t}<small>${xs.length} productos</small></h2>${g.id==='relampago'?`<div class="flashbar">${ico('relampago')} Duran pocas horas o hasta agotar stock. Terminan en <b class="cd-all">--:--:--</b></div>`:''}<div class="grid">${xs.map(card).join('')}</div></section>`}
   $('#count').textContent=`${L.length} ${L.length===1?'producto':'productos'}${q?` para “${st.q.trim()}”`:''}`;
   $('#list').innerHTML=h; observe();
 }
 function go(){document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches?document.startViewTransition(render):render()}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -40px'});
 function observe(){document.querySelectorAll('.card:not(.in)').forEach(c=>io.observe(c));if(typeof tickCD==='function')tickCD()}
-$('#chips').innerHTML=`<button class="chip" data-g="all" aria-pressed="true">Todo <small>${DATA.length}</small></button>`+GR.map(g=>`<button class="chip${g.id==='relampago'?' gold':''}" data-g="${g.id}" aria-pressed="false">${g.e} ${g.t} <small>${g.n}</small></button>`).join('');
+const hms=ms=>{const s=Math.floor(ms/1000);return [s/3600,s%3600/60,s%60].map(n=>String(Math.floor(n)).padStart(2,'0')).join(':')};
+function tickCD(){const now=Date.now();let min=Infinity;
+  document.querySelectorAll('[data-fin]').forEach(el=>{const ms=new Date(el.dataset.fin).getTime()-now;if(ms<min)min=ms;el.textContent=ms>0?'Termina en '+hms(ms):'Terminó'});
+  document.querySelectorAll('.cd-all').forEach(el=>el.textContent=min>0&&min<Infinity?hms(min):'Terminó')}
+setInterval(tickCD,1000);
+DATA.splice(0,DATA.length,...DATA.filter(x=>!x.fin||new Date(x.fin).getTime()>Date.now()));
+const best=[...DATA].sort((a,b)=>(b.off*Math.log10(b.v+10))-(a.off*Math.log10(a.v+10)));
+const f=best[0];
+if(f){$('#feature').href='go/'+f.s+'.html';$('#feature').innerHTML=`<img src="${f.img}" alt="">
+  <span class="tagline"><span class="chipb ${f.g==='relampago'?'gold':'sale'}">-${f.off}%</span>${f.g==='relampago'?'<span class="chipb dark">Relámpago</span>':''}</span>
+  <div class="info"><p class="nm">${f.t}</p><p class="pr"><b>${fmt(f.p)}</b>${f.pa?`<s>${fmt(f.pa)}</s>`:''}</p>${f.pa?`<p class="save">Ahorrás ${fmt(f.pa-f.p)}</p>`:''}</div>`}
+$('#rail').innerHTML=best.slice(1,11).map((x,i)=>card(x,i)).join('');
+$('#chips').innerHTML=`<button class="chip" data-g="all" aria-pressed="true">Todo <small>${DATA.length}</small></button>`+GR.map(g=>`<button class="chip${g.id==='relampago'?' gold':''}" data-g="${g.id}" aria-pressed="false">${ico(g.id)}${g.t} <small>${g.n}</small></button>`).join('');
 $('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;st.g=b.dataset.g;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));go();$('#main').scrollIntoView({behavior:'smooth'})});
 let t;$('#q').addEventListener('input',e=>{st.q=e.target.value;clearTimeout(t);t=setTimeout(()=>{go();if(st.q&&scrollY<innerHeight*.6)$('#main').scrollIntoView({behavior:'smooth'})},180)});
-$('#sort').addEventListener('change',e=>{st.sort=e.target.value==='rel'?'rel':e.target.value;go()});
+$('#sort').addEventListener('change',e=>{st.sort=e.target.value;go()});
 $('#vermayor').addEventListener('click',()=>{$('#sort').value='off';st.sort='off';go();$('#main').scrollIntoView({behavior:'smooth'})});
 $('#favs').addEventListener('click',e=>{st.fav=!st.fav;e.currentTarget.setAttribute('aria-pressed',st.fav);go()});
 document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus()}});
 const toast=$('#toast');let th;const say=m=>{toast.textContent=m;toast.classList.add('on');clearTimeout(th);th=setTimeout(()=>toast.classList.remove('on'),2600)};
-$('#list').addEventListener('click',async e=>{
-  const f=e.target.closest('.fav'),c=e.target.closest('.code'),w=e.target.closest('[data-wa]');
-  if(f){const s=f.dataset.s;favs.has(s)?favs.delete(s):favs.add(s);f.setAttribute('aria-pressed',favs.has(s));saveFav();say(favs.has(s)?'Guardado en favoritos ♥':'Sacado de favoritos');if(st.fav)go()}
+document.addEventListener('click',async e=>{
+  const fv=e.target.closest('.fav'),c=e.target.closest('.code'),w=e.target.closest('[data-wa]');
+  if(fv){const s=fv.dataset.s;favs.has(s)?favs.delete(s):favs.add(s);document.querySelectorAll(`.fav[data-s="${s}"]`).forEach(b=>b.setAttribute('aria-pressed',favs.has(s)));saveFav();say(favs.has(s)?'Guardado en favoritos':'Sacado de favoritos');if(st.fav)go()}
   if(c){hit('codigo-'+(DATA.find(d=>d.c===c.dataset.code)||{}).s);try{await navigator.clipboard.writeText(c.dataset.code)}catch(_){}say('Código '+c.dataset.code+' copiado: pegalo en el buscador de Mercado Libre')}
   if(w){const x=DATA.find(d=>d.s===w.dataset.wa);hit('wa-'+x.s);const url=location.href.split('#')[0].replace(/index\.html$/,'')+'go/'+x.s+'.html';
     open('https://wa.me/?text='+encodeURIComponent(`Mirá esto: ${x.t} a ${fmt(x.p)}${x.off?` (${x.off}% OFF)`:''} ${url}`),'_blank','noopener')}
 });
-// contadores
-const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=performance.now(),D=1600;
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=performance.now(),D=1400;
   (function step(n){const k=Math.min(1,(n-t0)/D),v=to*(1-Math.pow(1-k,4));el.textContent=pre+Math.round(v).toLocaleString('es-AR')+suf;if(k<1)requestAnimationFrame(step)})(t0);cio.unobserve(el)}));
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
-// ticker con los mayores descuentos
-const tk=[...DATA].sort((a,b)=>b.off-a.off).slice(0,10).map(x=>`<span>${x.t.split(' ').slice(0,3).join(' ')} −${x.off}%</span>`).join('');
-$("#tick").innerHTML=tk+tk;
-// barra y volver arriba
-addEventListener('scroll',()=>{$('#top').classList.toggle('scrolled',scrollY>10);$('#totop').classList.toggle('on',scrollY>900)},{passive:true});
+addEventListener('scroll',()=>{$('#totop').classList.toggle('on',scrollY>900)},{passive:true});
 $('#totop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
-function tickCD(){const now=Date.now();let min=Infinity;
-  document.querySelectorAll('[data-fin]').forEach(el=>{const ms=new Date(el.dataset.fin).getTime()-now;if(ms<min)min=ms;el.textContent=ms>0?hms(ms):'Terminó'});
-  document.querySelectorAll('.cd-all').forEach(el=>el.textContent=min>0&&min<Infinity?hms(min):'Terminó')}
-const hms=ms=>{const s=Math.floor(ms/1000);return [s/3600,s%3600/60,s%60].map(n=>String(Math.floor(n)).padStart(2,'0')).join(':')};
-setInterval(tickCD,1000);
-DATA.splice(0,DATA.length,...DATA.filter(x=>!x.fin||new Date(x.fin).getTime()>Date.now()));
 saveFav();render();tickCD();
+document.querySelectorAll('#rail .card').forEach(c=>io.observe(c));
 if(location.hash.startsWith('#s-')){const g=location.hash.slice(3);document.querySelector(`.chip[data-g="${g}"]`)?.click()}
 </script>
 </body>
