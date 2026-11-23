@@ -12,10 +12,10 @@ TIT = {
     "calor": "Sobrevivir al calor", "mosquitos": "Guerra a los mosquitos", "mate": "Mate de competición",
     "wifi": "El WiFi no llega al baño", "asado": "Asado de domingo", "gym": "En forma sin gimnasio",
     "cocina": "Cocinar sin saber", "vacaciones": "Vacaciones con poca plata", "cine": "Cine en casa",
-    "vago": "Ordenar sin moverse", "relampago": "Ofertas relámpago",
+    "vago": "Ordenar sin moverse", "relampago": "Ofertas relámpago", "bici": "Que no te roben la bici", "vecino": "El vecino y su cumbia", "gamer": "Para el que espera el GTA VI",
 }
 EMO = {"calor": "🥵", "mosquitos": "🦟", "mate": "🧉", "wifi": "📶", "asado": "🥩", "gym": "💪", "cocina": "🍳",
-       "vacaciones": "🏖️", "cine": "🍿", "vago": "🛋️", "relampago": "⚡"}
+       "vacaciones": "🏖️", "cine": "🍿", "vago": "🛋️", "relampago": "⚡", "bici": "🚲", "vecino": "🔊", "gamer": "🎮"}
 
 
 def slug(s):
