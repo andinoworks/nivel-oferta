@@ -223,6 +223,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <script>
 const DATA=__DATA__, GR=__GR__;
+// Contador anónimo (solo suma 1; sin datos de la persona). Lo lee D:/claude/web/afiliados-stats/stats.py
+const NS='nivel-oferta-andw', hit=k=>{try{fetch('https://abacus.jasoncameron.dev/hit/'+NS+'/'+k,{keepalive:true,mode:'no-cors'})}catch(e){}};
+hit('visitas');
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="go/"]');if(a)hit('clic-'+a.getAttribute('href').slice(3,-5))},true);
 const $=s=>document.querySelector(s), fmt=n=>'$ '+Math.round(n).toLocaleString('es-AR');
 const vend=v=>v>=1000?`+${Math.round(v/1000)} mil vendidos`:v?`+${v} vendidos`:'';
 let st={g:'all',q:'',sort:'rel',fav:false};
@@ -270,8 +274,8 @@ const toast=$('#toast');let th;const say=m=>{toast.textContent=m;toast.classList
 $('#list').addEventListener('click',async e=>{
   const f=e.target.closest('.fav'),c=e.target.closest('.code'),w=e.target.closest('[data-wa]');
   if(f){const s=f.dataset.s;favs.has(s)?favs.delete(s):favs.add(s);f.setAttribute('aria-pressed',favs.has(s));saveFav();say(favs.has(s)?'Guardado en favoritos ♥':'Sacado de favoritos');if(st.fav)go()}
-  if(c){try{await navigator.clipboard.writeText(c.dataset.code)}catch(_){}say('Código '+c.dataset.code+' copiado: pegalo en el buscador de Mercado Libre')}
-  if(w){const x=DATA.find(d=>d.s===w.dataset.wa);const url=location.href.split('#')[0].replace(/index\.html$/,'')+'go/'+x.s+'.html';
+  if(c){hit('codigo-'+(DATA.find(d=>d.c===c.dataset.code)||{}).s);try{await navigator.clipboard.writeText(c.dataset.code)}catch(_){}say('Código '+c.dataset.code+' copiado: pegalo en el buscador de Mercado Libre')}
+  if(w){const x=DATA.find(d=>d.s===w.dataset.wa);hit('wa-'+x.s);const url=location.href.split('#')[0].replace(/index\.html$/,'')+'go/'+x.s+'.html';
     open('https://wa.me/?text='+encodeURIComponent(`Mirá esto: ${x.t} a ${fmt(x.p)}${x.off?` (${x.off}% OFF)`:''} ${url}`),'_blank','noopener')}
 });
 // contadores
