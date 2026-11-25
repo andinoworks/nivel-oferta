@@ -51,6 +51,7 @@ with sync_playwright() as p:
                                              args=["--disable-blink-features=AutomationControlled", "--window-position=-32000,-32000"],
                                              viewport={"width": 1400, "height": 1000})
     pg = c.pages[0]
+    pg.set_default_navigation_timeout(120000)  # 25-nov: la página de ofertas puede tardar >30 s en cargar
     raw = []
     for page in range(1, 6):
         pg.goto(f"https://www.mercadolibre.com.ar/ofertas?promotion_type=lightning&page={page}", wait_until="domcontentloaded"); time.sleep(3)
